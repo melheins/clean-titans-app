@@ -1,3 +1,6 @@
 // load all chores to be done
 
-$('.chore-list').prepend()
+window.onload = function () {
+    $('.chore-list').prepend()
+}
+
