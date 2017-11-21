@@ -1,0 +1,28 @@
+{
+  "name": "project-2",
+  "version": "1.0.0",
+  "description": "Application for management of family tasks.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melheins/project-2.git"
+  },
+  "author": "Kathy Satterlee, Melanie heins, Valarie Regas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/melheins/project-2/issues"
+  },
+  "homepage": "https://github.com/melheins/project-2#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "firebase": "^4.6.2",
+    "mysql": "^2.15.0",
+    "path": "^0.12.7",
+    "sequelize": "^4.22.9"
+  }
+}
