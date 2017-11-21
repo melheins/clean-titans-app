@@ -2,9 +2,9 @@
 
 ## Overview
 .....
-
+https://tranquil-lowlands-50596.herokuapp.com/ | https://git.heroku.com/tranquil-lowlands-50596.git
 ## App Specifications
-* 
+*
 
 ## Known Issues
 * 
@@ -26,20 +26,20 @@ NPM Packages Used
 If you would like to install and run this project locally, first clone this repository as follows:
 
 	git clone git@github.com:.....................
-	
+
 Subsequently, install the necessary dependencies.
 
 	cd project-name
 	npm install
-	
+
 Run the Node.js server.
 
 	node server.js
-	
-Finally, access the app within your browser on the default port of `8080` with: `localhost:8080`. 
+
+Finally, access the app within your browser on the default port of `8080` with: `localhost:8080`.
 
 ## Future Work
 
 Future work on this project includes but is not limited to the following:
 
-1) 
+1)
