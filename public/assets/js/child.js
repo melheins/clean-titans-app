@@ -1,3 +1,6 @@
 // load all chores to be done
 
-$('.chore-list').prepend()
+$(document).ready(function() {
+    var choreList = $('.chore-list');
+    choreList.prepend()
+});
