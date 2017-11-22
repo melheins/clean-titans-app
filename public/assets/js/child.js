@@ -1,6 +1,10 @@
 // load all chores to be done
 
-$(document).ready(function() {
+
+    var choreArray = [];
     var choreList = $('.chore-list');
-    choreList.prepend()
-});
+    choreArray.prepend()
+
+window.onload = function () {
+    
+}
