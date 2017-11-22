@@ -1,4 +1,4 @@
-# Project 2 (name TBD)
+# Clean Titans
 
 ## Overview
 .....

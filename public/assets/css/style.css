@@ -30,3 +30,7 @@ nav {
     height:115px;
     background-color: #ffd600;
 }
+
+.mission-approval-list, .reward-approval-list {
+    display: none;
+}
