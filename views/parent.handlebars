@@ -1,19 +1,22 @@
 <h1>Command Center</h1>
 
 <div class="mission-approval-list">
-
+    {{#each mission_approval}}
+        {{> mission-banner-item}}
+    {{/each}}
 </div>
 
 <div class="reward-approval-list">
-
+    {{#each reward_approval}}
+        {{> reward-banner-item}}
+    {{/each}}
 </div>
 
 <div class="row">
 
-
     <div class="team-summary">
         {{#each child}}
-                {{> burger-block}}
+            {{> team-child-card}}
         {{/each}}
     </div>
 
