@@ -3,7 +3,7 @@
 
     var choreArray = [];
     var choreList = $('.chore-list');
-    choreArray.prepend()
+    choreList.prepend()
 
 window.onload = function () {
     
