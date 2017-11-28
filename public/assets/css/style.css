@@ -10,7 +10,6 @@ Colors:
 #9575cd deep-purple lighten-2
  */
 
-
 /****
 Fonts:
 Badaboom
@@ -27,10 +26,24 @@ Comic Geek
 }
 
 nav {
-    height:115px;
-    background-color: #ffd600;
+    height: 115px;
 }
 
+/** Hide notification sections unless needed **/
 .mission-approval-list, .reward-approval-list {
     display: none;
+}
+
+@media only screen and (min-width: 701px) {
+    .brand-logo {
+        float: left !important;
+    }
+
+}
+
+@media only screen and (max-width: 700px) {
+    .brand-logo {
+        text-align: center;
+    }
+
 }
