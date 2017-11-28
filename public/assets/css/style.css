@@ -17,3 +17,20 @@ Badaboom
 Avengeance Mightiest
 Comic Geek
  */
+
+.header-logo {
+    width: 150px;
+}
+
+.left-hdr-menu {
+    padding-left: 175px !important;
+}
+
+nav {
+    height:115px;
+    background-color: #ffd600;
+}
+
+.mission-approval-list, .reward-approval-list {
+    display: none;
+}
