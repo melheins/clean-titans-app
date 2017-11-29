@@ -1,0 +1,9 @@
+version: '2'
+services:
+  clean-titans:
+    build: .
+    image: "kvm/clean-titans"
+    ports:
+     - "5000:8080"
+    volumes:
+    - .:/usr/src/app

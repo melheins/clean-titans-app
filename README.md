@@ -1,4 +1,4 @@
-# Project 2 (name TBD)
+# Clean Titans
 
 ## Overview
 .....
@@ -7,7 +7,7 @@ https://tranquil-lowlands-50596.herokuapp.com/ | https://git.heroku.com/tranquil
 *
 
 ## Known Issues
-* 
+*
 
 ## Technologies used
 NPM Packages Used
@@ -43,3 +43,6 @@ Finally, access the app within your browser on the default port of `8080` with: 
 Future work on this project includes but is not limited to the following:
 
 1)
+docker build -t kvm/clean-titans .
+
+$ docker run -p 49160:8080 -it -v $(pwd):/usr/src/app kvm/clean-titans
