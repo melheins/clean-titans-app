@@ -17,6 +17,36 @@ Avengeance Mightiest
 Comic Geek
  */
 
+@font-face {
+    font-family: Badaboom;
+    src: url(fonts/badaboom_bb/BADABB.ttf);
+}
+
+@font-face {
+    font-family: Avengeance Mightiest;
+    src: url(fonts/avengeance_mightiest_avenger/AVENGEANCE_MIGHTIEST_AVENGER.otf);
+}
+
+@font-face {
+    font-family: Comic Geek;
+    src: url(fonts/comic_geek_regular/Comic_Geek_Regular.ttf);
+}
+
+h1 {
+    font-family: "Avengeance Mightiest Avenger", Helvetica, Arial, sans-serif;
+}
+
+.nav-icon-text {
+    font-family: Badaboom, Helvetica, Arial, sans-serif;
+    font-size: 35px;
+    position: absolute;
+    top: 60px;
+}
+
+.nav-icon-img {
+    padding-top: 5px;
+}
+
 .header-logo {
     width: 150px;
 }
