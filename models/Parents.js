@@ -1,7 +1,11 @@
 module.exports = function (sequelize, Datatypes) {
 
-  const Parents = sequelize.define("Parent", {
-    name: {
+  const Parents = sequelize.define("parents", {
+    first_name: {
+      type: Datatypes.STRING,
+      allowNull: false
+    }
+    last_name: {
       type: Datatypes.STRING,
       allowNull: false
     }

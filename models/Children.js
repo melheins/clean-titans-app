@@ -1,7 +1,7 @@
 module.exports = function (sequelize, Datatypes) {
 
-  const Children = sequelize.define("Children", {
-    name: {
+  const Children = sequelize.define("children", {
+    first_name: {
       type: Datatypes.STRING,
       allowNull: false,
     }
@@ -15,12 +15,12 @@ module.exports = function (sequelize, Datatypes) {
     }
     nickname: {
       type: Datatypes.STRING,
-      allowNull: false
-      defaultValue: this.name
+      allowNull: true
     }
   });
 
   Children.associate = function (models) {
+    Children.belongsTo(models.Parents)
     Children.hasMany(models.ChoresActive, {
       onDelete: "cascade"
     });

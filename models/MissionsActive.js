@@ -1,16 +1,10 @@
 module.exports = function (sequelize, Datatypes) {
   const ChoreList = sequelize.define("ChoreList", {
-    name: {
+    status: {
       type: Datatypes.STRING,
       allowNull: false,
+      default: "i"
     }
-    points: {
-      type: Datatypes.INTEGER,
-      allowNull: false,
-    }
-    description: {
-      type: Datatypes.TEXT,
-      allowNull:
-    }
+    
   })
 };
