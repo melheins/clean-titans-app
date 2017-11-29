@@ -1,9 +1,8 @@
 // load all chores to be done
 
 
-    var choreArray = [];
-    var choreList = $('.chore-list');
-    choreList.prepend()
+    var missionList = $('.mission-list');
+    missionList.prepend()
 
 window.onload = function () {
     

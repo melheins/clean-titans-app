@@ -1,4 +1,4 @@
-#Schema#
+--#Schema#
 
 DROP DATABASE IF EXISTS clean_titans_db;
 
@@ -6,14 +6,14 @@ CREATE DATABASE clean_titans_db;
 
 USE clean_titans_db;
 
-##Parent Table##
+--##Parent Table##
 CREATE TABLE parents (
   parent_id  INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   first_name VARCHAR(30),
   last_name  VARCHAR(30)
 );
 
-##Child Table##
+--##Child Table##
 CREATE TABLE children (
   child_id   INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   parent_id  INT,
@@ -24,7 +24,7 @@ CREATE TABLE children (
   FOREIGN KEY (parent_id) REFERENCES parents (parent_id)
 );
 
-##Child's Missions Table##
+--##Child's Missions Table##
 CREATE TABLE child_mission_list (
   seq_no              INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   child_id            INT,
@@ -35,7 +35,7 @@ CREATE TABLE child_mission_list (
   FOREIGN KEY (mission_id) REFERENCES mission (mission_id)
 );
 
-##Missions Table##
+--##Missions Table##
 CREATE TABLE mission (
   mission_id          VARCHAR(30) PRIMARY KEY,
   mission_title       VARCHAR(45),
@@ -44,6 +44,6 @@ CREATE TABLE mission (
   mission_video_url   VARCHAR(200)
 );
 
-##Child's Rewards Table##
+--##Child's Rewards Table##
 
-##Rewards Table##
+--##Rewards Table##
