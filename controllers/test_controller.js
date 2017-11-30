@@ -33,7 +33,18 @@ router.get("/parent", function (req, res) {
 });
 
 router.get("/child", function (req, res) {
-    res.render('child', {layout: 'child_layout'});
+
+    var missions_assigned = [
+        {
+            "mName": "sample1"
+        },
+        {
+            "mName": "sample2"
+        }];
+
+    console.log(missions_assigned);
+
+    res.render('child', {layout: 'child_layout', child: missions_assigned});
 });
 
 // Export routes for server.js to use.
