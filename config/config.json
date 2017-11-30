@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "TechPass17!",
-    "database": "database_development",
-    "host": "127.0.0.1",
+    "username": "ibp7jjv480w7j1q8",
+    "password": "lz27y75rw6x00fz3",
+    "database": "x1vm9o4shp876fga",
+    "host": "icopoghru9oezxh8.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {

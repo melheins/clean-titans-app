@@ -1,10 +1,11 @@
 module.exports = function (sequelize, Datatypes) {
-  const ChoreList = sequelize.define("ChoreList", {
+  const MissionsActive = sequelize.define("MissionsActive", {
     status: {
       type: Datatypes.STRING,
       allowNull: false,
       default: "i"
     }
-    
+
   })
+  return MissionsActive
 };
