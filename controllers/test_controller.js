@@ -36,15 +36,15 @@ router.get("/child", function (req, res) {
 
     var missions_assigned = [
         {
-            "mName": "sample1"
+            "mission_id": "sample1"
         },
         {
-            "mName": "sample2"
+            "mission_id": "sample2"
         }];
 
     console.log(missions_assigned);
 
-    res.render('child', {layout: 'child_layout', child: missions_assigned});
+    res.render('child', {layout: 'child_layout', missions_assigned: missions_assigned});
 });
 
 // Export routes for server.js to use.
