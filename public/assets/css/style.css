@@ -32,9 +32,13 @@ Comic Geek
     src: url(fonts/comic_geek_regular/Comic_Geek_Regular.ttf);
 }
 
+body {
+    background-image: url("../images/backgrounds/black_dot.jpg");
+    background-position: center;
+}
+
 h1,
-h3,
-h4 {
+h3 {
     font-family: "Avengeance Mightiest Avenger", Helvetica, Arial, sans-serif;
 }
 
@@ -84,6 +88,12 @@ nav {
     width:70px;
 }
 
-p {
-    font-family: "Comic Geek";
+h4 {
+    font-family: Badaboom, Helvetica, Arial, sans-serif;
+}
+
+p,
+a,
+.collection-item {
+    font-family: "Comic Geek", Helvetica, Arial, sans-serif;
 }
