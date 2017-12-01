@@ -8,11 +8,14 @@
                 <img src="assets/images/logo/logo_big_wide.png">
             </div>
             <div class="row">
-                <div class="col s6">
+                <div class="col s4 center-align">
                     <a class="waves-effect waves-red btn-flat" id="parent">COMMAND CENTER LOGIN</a>
                 </div>
-                <div class="col s6">
+                <div class="col s4 center-align">
                     <a class="waves-effect waves-red btn-flat" id="child">HEROES LOGIN</a>
+                </div>
+                <div class="col s4 center-align">
+                    <a class="waves-effect waves-red btn-flat" id="create">CREATE AN ACCOUNT</a>
                 </div>
             </div>
         </div>
@@ -25,22 +28,19 @@
     <div class="modal-content">
         <div class="container">
             <div class="row">
-                <div class="row">
-                    <form class="col s12">
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="email" type="email" class="validate">
-                                <label for="email">Email</label>
-                            </div>
-                            <div class="input-field col s12">
-                                <input id="password" type="password" class="validate">
-                                <label for="password">Password</label>
-                            </div>
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email" type="email" class="validate">
+                            <label for="email">Email</label>
                         </div>
-                    </form>
-                </div>
+                        <div class="input-field col s12">
+                            <input id="password" type="password" class="validate">
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <img src="">
         </div>
     </div>
     <div class="modal-footer">
@@ -54,25 +54,62 @@
     <div class="modal-content">
         <div class="container">
             <div class="row">
-                <div class="row">
-                    <form class="col s12">
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input placeholder="" id="user_name" type="text" class="validate">
-                                <label for="user_name">User Name</label>
-                            </div>
-                            <div class="input-field col s12">
-                                <input id="password" type="password" class="validate">
-                                <label for="password">Password</label>
-                            </div>
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input placeholder="" id="user_name" type="text" class="validate">
+                            <label for="user_name">User Name</label>
                         </div>
-                    </form>
-                </div>
+                        <div class="input-field col s12">
+                            <input id="password" type="password" class="validate">
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <img src="">
         </div>
     </div>
     <div class="modal-footer">
         <a href="/child" class="modal-action modal-close waves-effect waves-green btn-flat">Onward!</a>
+    </div>
+</div>
+
+<!-- Create Acct Modal Structure -->
+<div id="createModal" class="modal">
+    <!-- modal content -->
+    <div class="modal-content">
+        <div class="container">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input placeholder="First Name" id="first_name" type="text" class="validate">
+                    <label for="first_name">First Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <input placeholder="Last Name" id="last_name" type="text" class="validate">
+                    <label for="last_name">Last Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input placeholder="Email Address" id="email" type="email" class="validate">
+                    <label for="email">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input placeholder="Choose Password" id="password" type="password" class="validate">
+                    <label for="password">Password</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input placeholder="Repeat Password" id="passwordVerify" type="text" class="validate">
+                    <label for="passwordVerify">Repeat Password</label>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="/parent" class="modal-action modal-close waves-effect waves-green btn-flat">Create!</a>
+        </div>
     </div>
 </div>
