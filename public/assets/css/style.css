@@ -32,7 +32,8 @@ Comic Geek
     src: url(fonts/comic_geek_regular/Comic_Geek_Regular.ttf);
 }
 
-h1 {
+h1,
+h3 {
     font-family: "Avengeance Mightiest Avenger", Helvetica, Arial, sans-serif;
 }
 

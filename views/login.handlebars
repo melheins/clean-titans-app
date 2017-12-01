@@ -1,15 +1,49 @@
 <div class="row">
     <div class="col s12 m8 offset-m2">
         <div class="card">
+            <div class="center-align">
+                <h3>Please Log In To Save The Day!</h3>
+            </div>
             <div class="card-image">
-                <img src="../public/assets/images/logo/logo_big.png">
+                <img src="assets/images/logo/logo_big_wide.png">
             </div>
-            <div class="card-content">
-                <p>Please Log In To Continue</p>
-            </div>
-            <div class="card-action">
-                <a href="#">This is a link</a>
+            <div class="card-tabs">
+                <ul class="tabs tabs-fixed-width">
+                    <li class="tab" id="parent">Command Center Login</li>
+                    <li class="tab" id="child">Hero Login</li>
+                </ul>
             </div>
         </div>
+    </div>
+</div>
+
+<!-- Parent Modal Structure -->
+<div id="parentModal" class="modal">
+    <!-- modal content -->
+    <div class="modal-content">
+        <div class="container">
+            <div class="row">
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="email" type="email" class="validate">
+                                    <label for="email">Email</label>
+                                </div>
+                            </div>
+                            <div class="input-field col s12">
+                                <input id="password" type="password" class="validate">
+                                <label for="password">Password</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <img src="">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="parent.handlebars" class="modal-action modal-close waves-effect waves-green btn-flat">Log In</a>
     </div>
 </div>
