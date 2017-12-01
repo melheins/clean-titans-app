@@ -9,6 +9,10 @@ module.exports = function (sequelize, Datatypes) {
       type: Datatypes.STRING,
       allowNull: false
     }
+    uid: {
+      type: DataTypes.Integer,
+      allowNull: false
+    }
   });
 
   Parents.associate = function (models) {
