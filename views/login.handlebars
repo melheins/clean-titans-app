@@ -7,11 +7,13 @@
             <div class="card-image">
                 <img src="assets/images/logo/logo_big_wide.png">
             </div>
-            <div class="card-tabs">
-                <ul class="tabs tabs-fixed-width">
-                    <li class="tab" id="parent">Command Center Login</li>
-                    <li class="tab" id="child">Hero Login</li>
-                </ul>
+            <div class="row">
+                <div class="col s6">
+                    <a class="waves-effect waves-red btn-flat" id="parent">COMMAND CENTER LOGIN</a>
+                </div>
+                <div class="col s6">
+                    <a class="waves-effect waves-red btn-flat" id="child">HEROES LOGIN</a>
+                </div>
             </div>
         </div>
     </div>
@@ -26,11 +28,9 @@
                 <div class="row">
                     <form class="col s12">
                         <div class="row">
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <input id="email" type="email" class="validate">
-                                    <label for="email">Email</label>
-                                </div>
+                            <div class="input-field col s12">
+                                <input id="email" type="email" class="validate">
+                                <label for="email">Email</label>
                             </div>
                             <div class="input-field col s12">
                                 <input id="password" type="password" class="validate">
@@ -44,6 +44,35 @@
         </div>
     </div>
     <div class="modal-footer">
-        <a href="parent.handlebars" class="modal-action modal-close waves-effect waves-green btn-flat">Log In</a>
+        <a href="/parent" class="modal-action modal-close waves-effect waves-green btn-flat">Log In</a>
+    </div>
+</div>
+
+<!-- Child Modal Structure -->
+<div id="childModal" class="modal">
+    <!-- modal content -->
+    <div class="modal-content">
+        <div class="container">
+            <div class="row">
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="" id="user_name" type="text" class="validate">
+                                <label for="user_name">User Name</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <input id="password" type="password" class="validate">
+                                <label for="password">Password</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <img src="">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="/child" class="modal-action modal-close waves-effect waves-green btn-flat">Onward!</a>
     </div>
 </div>
