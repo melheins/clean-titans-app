@@ -24,27 +24,46 @@ router.get("/parent", function (req, res) {
             "avatar": "assets/images/childavatars/spiderman.jpg"
         }];
 
+    var rewards = [
+        {
+            "title": "Cookie",
+            "points": "5"
+        },
+        {
+            "title": "Ice Cream",
+            "points": "5"
+        }];
+
+    var missions = [
+        {
+            "title": "Brush Teeth",
+            "points": "5"
+        },
+        {
+            "title": "Make Bed",
+            "points": "5"
+        }];
+
     var rewardsAppr;
 
     var missionsAppr;
-    console.log(children);
 
-    res.render('parent', {layout: 'parent_layout', child: children, reward_approval: rewardsAppr, mission_approval: missionsAppr});
+    res.render('parent', {layout: 'parent_layout', child: children, reward_approval: rewardsAppr, mission_approval: missionsAppr, mission:missions, reward:rewards});
 });
 
 router.get("/child", function (req, res) {
 
     var missions_assigned = [
         {
-            "mName": "sample1"
+            "mission_id": "sample1"
         },
         {
-            "mName": "sample2"
+            "mission_id": "sample2"
         }];
 
     console.log(missions_assigned);
 
-    res.render('child', {layout: 'child_layout', child: missions_assigned});
+    res.render('child', {layout: 'child_layout', missions_assigned: missions_assigned});
 });
 
 // Export routes for server.js to use.
