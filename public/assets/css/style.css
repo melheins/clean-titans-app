@@ -33,7 +33,8 @@ Comic Geek
 }
 
 h1,
-h3 {
+h3,
+h4 {
     font-family: "Avengeance Mightiest Avenger", Helvetica, Arial, sans-serif;
 }
 
@@ -81,4 +82,8 @@ nav {
 
 .avatar-sm {
     width:70px;
+}
+
+p {
+    font-family: "Comic Geek";
 }
