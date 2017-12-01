@@ -24,12 +24,31 @@ router.get("/parent", function (req, res) {
             "avatar": "assets/images/childavatars/spiderman.jpg"
         }];
 
+    var rewards = [
+        {
+            "title": "Cookie",
+            "points": "5"
+        },
+        {
+            "title": "Ice Cream",
+            "points": "5"
+        }];
+
+    var missions = [
+        {
+            "title": "Brush Teeth",
+            "points": "5"
+        },
+        {
+            "title": "Make Bed",
+            "points": "5"
+        }];
+
     var rewardsAppr;
 
     var missionsAppr;
-    console.log(children);
 
-    res.render('parent', {layout: 'parent_layout', child: children, reward_approval: rewardsAppr, mission_approval: missionsAppr});
+    res.render('parent', {layout: 'parent_layout', child: children, reward_approval: rewardsAppr, mission_approval: missionsAppr, mission:missions, reward:rewards});
 });
 
 router.get("/child", function (req, res) {
