@@ -6,6 +6,7 @@
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
+var methodOverride = require('method-override')
 
 // Sets up the Express App
 // =============================================================
@@ -24,13 +25,24 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // Static directory
 app.use(express.static("public"));
 
+//Set up handlebars:
+var exphbs = require('express-handlebars');
+app.engine('handlebars', exphbs({
+    defaultLayout: 'login_layout'
+}));
+app.set('view engine', 'handlebars');
+
 // Routes
 // =============================================================
+var routes = require("./controllers/test_controller.js");
 
+app.use("/", routes);
+//require("./routes/parent-api-routes.js")(app);
+//require("./routes/child-api-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync({ force: false }).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
