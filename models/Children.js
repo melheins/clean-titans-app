@@ -1,24 +1,24 @@
-module.exports = function (sequelize, Datatypes) {
+module.exports = function (sequelize, DataTypes) {
 
   const Children = sequelize.define("Children", {
     name: {
-      type: Datatypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     points: {
-      type: Datatypes.INTEGER,
+      type: DataTypes.INTEGER,
       defaultValue: 0
     },
     avatar: {
-      type: Datatypes.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: true
     },
     nickname: {
-      type: Datatypes.STRING,
+      type: DataTypes.STRING,
       allowNull: true
-    }
+    },
     uid: {
-      type: DataTypes.Integer,
+      type: DataTypes.INTEGER,
       allowNull: false
     }
   });
