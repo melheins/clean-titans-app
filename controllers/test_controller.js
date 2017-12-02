@@ -98,7 +98,7 @@ router.get("/child", function (req, res) {
 
     var missions_assigned = [
         {
-            "mission_title": ""
+            "mission_title": "sample1"
         },
         {
             "mission_title": "sample2"
@@ -157,7 +157,7 @@ router.get("/child-rewards", function (req, res) {
         "nickname": "Sylar"
     };
 
-    res.render('child', {layout: 'child-layout', childRewardsPage:true, rewards_available:rewards_available, child: hero});
+    res.render('child', {layout: 'child_layout', childRewardsPage:true, rewards_available:rewards_available, child: hero});
 });
 
 // Export routes for server.js to use.
