@@ -52,9 +52,8 @@ CREATE TABLE rewards_to_earn (
   reward_status VARCHAR(1)   DEFAULT 'I'
 );
 
---##Parents Rewards Table##
+--##Rewards Table##
 CREATE TABLE rewards_earned (
   reward_id VARCHAR(50) PRIMARY KEY,
-  reward_points_required INT NOT NULL,
-  reward_status VARCHAR(1) DEFAULT 'I'
+  reward_points_required INT NOT NULL
 );
