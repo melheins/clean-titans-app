@@ -45,6 +45,10 @@ h3 {
     font-family: "Avengeance Mightiest Avenger", Helvetica, Arial, sans-serif;
 }
 
+h1 {
+    color: #d50000;
+}
+
 .nav-icon-text {
     font-family: Badaboom, Helvetica, Arial, sans-serif;
     font-size: 35px;
@@ -88,7 +92,7 @@ nav {
 }
 
 .avatar-sm {
-    width:70px;
+    width: 70px;
 }
 
 h4 {
