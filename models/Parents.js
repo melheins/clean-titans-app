@@ -1,16 +1,16 @@
-module.exports = function (sequelize, Datatypes) {
+module.exports = function (sequelize, DataTypes) {
 
   const Parents = sequelize.define("Parents", {
     first_name: {
-      type: Datatypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false
     },
     last_name: {
-      type: Datatypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false
-    }
+    },
     uid: {
-      type: DataTypes.Integer,
+      type: DataTypes.INTEGER,
       allowNull: false
     }
   });
