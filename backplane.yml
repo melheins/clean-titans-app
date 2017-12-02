@@ -1,0 +1,21 @@
+version: '2'
+services:
+  bpconnect:
+    image: backplaneio/backplane
+    networks:
+    - my-net
+    command: connect "endpoint=determined-prince-22.backplaneapp.io,release=v1" http://localhost:3030
+    links:
+    - bphello:bphello
+    environment:
+    - "BACKPLANE_TOKEN=<nW5gjsyOtUFLok7E2mxNBeafAUMyndrG6JJxUJHE9T0WKVN-J6N83hrRp4knsF6oFxzocYGJrwWHg14DPf_WcpS0xCZfGY3M99ficQG_k1KWXBZWi7s=>"
+  bphello:
+    image: backplaneio/backplane
+    networks:
+    - my-net
+    ports:
+    - "3030"
+    command: hello
+networks:
+  my-net:
+    driver: bridge
