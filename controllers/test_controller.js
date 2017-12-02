@@ -22,6 +22,10 @@ router.get("/login-parent", function (req, res) {
     res.render('login');
 });
 
+router.get("/login-parent", function (req, res) {
+    res.render('login');
+});
+
 router.get("/parent", function (req, res) {
 
     var children = [
@@ -94,10 +98,10 @@ router.get("/child", function (req, res) {
 
     var missions_assigned = [
         {
-            "mission_id": "sample1"
+            "mission_title": "sample1"
         },
         {
-            "mission_id": "sample2"
+            "mission_title": "sample2"
         }];
 
     console.log(missions_assigned);
@@ -116,14 +120,18 @@ router.get("/child", function (req, res) {
 
     console.log(rewards_earned);
 
-    res.render('child', {layout: 'child_layout', missions_assigned: missions_assigned, rewards_earned: rewards_earned, child: hero});
+    res.render('child', {layout: 'child_layout', childSummaryPage:true, missions_assigned: missions_assigned, rewards_earned: rewards_earned, child: hero});
 });
 
 // mission_title
 //     mission_point_value
 //     mission_decription
 
-router.get("/missions", function (req, res) {
+router.get("/child-missions", function (req, res) {
+
+    var hero = {
+        "nickname": "Sylar"
+    };
 
     var missions_assigned = [
         {
@@ -147,7 +155,22 @@ router.get("/missions", function (req, res) {
         "and such to one location. sweep everything into the dustpan, then dump the dustpan contents into the trashcan, and put the broom and dustpan away."
     };
 
-    res.render('missions', {layout: 'child_layout', missions_assigned: missions_assigned, mission_name: mission_name, mission_pt_val: mission_pt_val, mission_desc: mission_desc});
+    res.render('child', {layout: 'child_layout',childMissionsPage:true, missions_assigned: missions_assigned, mission_name: mission_name, mission_pt_val: mission_pt_val, mission_desc: mission_desc, child: hero});
+});
+
+router.get("/child-rewards", function (req, res) {
+
+    var rewards_available = {
+
+        "reward_id": "ice cream",
+        "reward_points_required": 3
+    };
+
+    var hero = {
+        "nickname": "Sylar"
+    };
+
+    res.render('child', {layout: 'child-layout', childRewardsPage:true, rewards_available:rewards_available, child: hero});
 });
 
 // Export routes for server.js to use.

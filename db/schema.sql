@@ -55,5 +55,7 @@ CREATE TABLE rewards_to_earn (
 --##Rewards Table##
 CREATE TABLE rewards_earned (
   reward_id VARCHAR(50) PRIMARY KEY,
-  reward_points_required INT NOT NULL
+  reward_points_required INT NOT NULL,
+  reward_category VARCHAR(50),
+
 );
