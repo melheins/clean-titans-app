@@ -1,21 +1,23 @@
-<h1>Welcome Hero!</h1>
-
 <div class="row">
-    <div class="col s6">
-        <div class="mission-list">
-            <!--<ul>-->
-                {{#each missions_assigned}}
-                    {{> missions-card}}
-                    <!--<li>{{!team-child-card}}</li>-->
-                {{/each}}
-            <!--</ul>-->
-        </div>
+    <div class="col s12 m6 offset-m3">
+        <h1 class="white">Welcome {{child.nickname}}!</h1>
     </div>
-    <div class="col s6">
-        <div class="rewards-not-redeemed">
-            {{#each rewards_to_claim}}
-
+</div>
+<div id="child-summary-area" class="row">
+    <div class="col s12 m6">
+        <ul class="collection with-header white">
+            <li class="collection-header red accent-4"><h4 class="center-align">Missions Available</h4></li>
+            {{#each missions_assigned}}
+                <a href="#!" class="collection-item">{{> missions-card}}</a>
             {{/each}}
-        </div>
+        </ul>
+    </div>
+    <div class="col s12 m6">
+        <ul class="collection with-header white">
+            <li class="collection-header red accent-4"><h4 class="center-align">Rewards Earned</h4></li>
+            {{#each rewards_earned}}
+                <a href="#!" class="collection-item">{{> rewards-card}}</a>
+            {{/each}}
+        </ul>
     </div>
 </div>
