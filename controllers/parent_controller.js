@@ -75,6 +75,21 @@ router.get("/parent-add-child", function (req, res) {
     res.render('parent', {layout: 'parent_layout', parentAddChildPage:true});
 });
 
+router.get("/parent-rewards", function (req, res) {
+
+    res.render('parent', {layout: 'parent_layout', parentRewardsPage:true});
+});
+
+router.get("/parent-missions", function (req, res) {
+
+    res.render('parent', {layout: 'parent_layout', parentMissionsPage:true});
+});
+
+router.get("/parent-edit-child", function (req, res) {
+
+    res.render('parent', {layout: 'parent_layout', parentEditChildPage:true});
+});
+
 
 
 // Export routes for server.js to use.
