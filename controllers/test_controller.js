@@ -7,6 +7,18 @@ var router = express.Router();
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function (req, res) {
+    res.render('login',{loginPage:true});
+});
+
+router.get("/parent-login", function (req, res) {
+    res.render('login',{parentLoginPage:true});
+});
+
+router.get("/child-login", function (req, res) {
+    res.render('login',{childLoginPage:true});
+});
+
+router.get("/login-parent", function (req, res) {
     res.render('login');
 });
 
@@ -160,8 +172,6 @@ router.get("/child-rewards", function (req, res) {
 
     res.render('child', {layout: 'child-layout', childRewardsPage:true, rewards_available:rewards_available, child: hero});
 });
-
-
 
 // Export routes for server.js to use.
 module.exports = router;

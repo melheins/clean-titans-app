@@ -27,8 +27,10 @@
                     {{/each}}
                 </ul>
                 <div class="card-footer">
-                    <span class="">View Details</span>
-                    <a class="btn-add-mission btn-floating fab waves-effect waves-light red"><i
+
+                    <a class="" href="/parent-team">View Team Details</a>
+                    <a class="btn-add-mission btn-floating fab waves-effect waves-light red" href="/parent-add-child"><i
+
                             class="material-icons">add</i></a>
                 </div>
             </div>
@@ -43,8 +45,10 @@
                     {{/each}}
                 </ul>
                 <div class="card-footer">
-                    <span class="">View All</span>
-                    <a class="btn-add-reward btn-floating fab waves-effect waves-light red"><i
+
+                    <a class="" href="/parent-rewards">View All</a>
+                    <a class="disabled btn-add-reward btn-floating fab waves-effect waves-light red" href="/parent-add-rewards"><i
+
                             class="material-icons">add</i></a>
                 </div>
             </div>
@@ -59,8 +63,10 @@
                     {{/each}}
                 </ul>
                 <div class="card-footer">
-                    <span class="">View All</span>
-                    <a class="btn-add-mission btn-floating fab waves-effect waves-light red"><i
+
+                    <a class="" href="/parent-missions">View All</a>
+                    <a class="disabled btn-add-mission btn-floating fab waves-effect waves-light red" href="/parent-add-missions"><i
+
                             class="material-icons">add</i></a>
                 </div>
             </div>
@@ -83,7 +89,7 @@
                     </div>
                     <div class="card-content">
                         <img class='avatar-sm' src="{{avatar}}">
-                        <a class="btn-add-child btn-floating halfway-fab waves-effect waves-light red"><i
+                        <a class="btn-add-child btn-floating halfway-fab waves-effect waves-light red" href="/parent-edit-child"><i
                                 class="material-icons">edit</i></a>
                         <div class="card-footer">
                             <span class="">View Details</span>
@@ -119,7 +125,24 @@
                     <label for="email">Email</label>
                 </div>
             </div>
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+            </button>
         </form>
     </div>
 </div>
+
+{{/if}}
+
+{{#if parentRewardsPage}}
+    <h1>Rewards</h1>
+{{/if}}
+
+{{#if parentMissionsPage}}
+    <h1>Missions</h1>
+{{/if}}
+
+{{#if parentEditChildPage}}
+    <h1>Edit Child</h1>
+
 {{/if}}
