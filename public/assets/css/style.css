@@ -33,13 +33,20 @@ Comic Geek
 }
 
 body {
-    background-image: url("../images/backgrounds/black_dot.jpg");
+    background-image: url(../images/backgrounds/dotsbg80.jpg);
     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 h1,
 h3 {
     font-family: "Avengeance Mightiest Avenger", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    color: #d50000;
 }
 
 .nav-icon-text {
@@ -85,7 +92,7 @@ nav {
 }
 
 .avatar-sm {
-    width:70px;
+    width: 70px;
 }
 
 h4 {
