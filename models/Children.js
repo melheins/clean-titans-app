@@ -17,6 +17,10 @@ module.exports = function (sequelize, Datatypes) {
       type: Datatypes.STRING,
       allowNull: true
     }
+    uid: {
+      type: DataTypes.Integer,
+      allowNull: false
+    }
   });
 
   Children.associate = function (models) {
