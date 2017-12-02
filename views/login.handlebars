@@ -1,37 +1,65 @@
+{{#if loginPage}}
 <div class="row">
     <div class="col s12 m8 offset-m2">
         <div class="card">
             <div class="center-align">
                 <h3>Please Log In To Save The Day!</h3>
             </div>
-            <!--   <div class="card-image">
-              <img src="/assets/images/logo/logo_big_wide.png">
-            </div>
-            <div class="row">
-                <div class="col s4 center-align">
-                    <a class="waves-effect waves-red btn-flat" id="parent">COMMAND CENTER LOGIN</a>
-                </div>
-                <div class="col s4 center-align">
-                    <a class="waves-effect waves-red btn-flat" id="child">HEROES LOGIN</a>
-                </div>
-                <div class="col s4 center-align">
-                    <a class="waves-effect waves-red btn-flat" id="create">CREATE AN ACCOUNT</a>
-                </div>
-            </div>-->
-
-
-
             <div class="row">
                 <div class="col s6 center-align">
-                    <a class="waves-effect waves-red btn-flat" id="parent">Parent</a>
+                    <a class="waves-effect waves-red btn-flat" href="/parent-login">Parent</a>
                 </div>
                 <div class="col s6 center-align">
-                    <a class="waves-effect waves-red btn-flat" id="child">Child</a>
+                    <a class="waves-effect waves-red btn-flat" href="/child-login">Child</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+{{/if}}
+
+{{#if parentLoginPage}}
+    <div class="row">
+        <div class="col s12 m8 offset-m2">
+            <div class="card">
+                <div class="center-align">
+                    <h3>Please Log In To Save The Day!</h3>
+                </div>
+                <div class="card-image">
+                  <img src="/assets/images/logo/logo_big_wide.png">
+                </div>
+                <div class="row">
+                    <div class="col s4 center-align">
+                        <a class="waves-effect waves-red btn-flat" id="parent">COMMAND CENTER LOGIN</a>
+                    </div>
+                    <div class="col s4 center-align">
+                        <a class="waves-effect waves-red btn-flat" id="create">CREATE AN ACCOUNT</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/if}}
+
+{{#if childLoginPage}}
+    <div class="row">
+        <div class="col s12 m8 offset-m2">
+            <div class="card">
+                <div class="center-align">
+                    <h3>Please Log In To Save The Day!</h3>
+                </div>
+                <div class="card-image">
+                  <img src="/assets/images/logo/logo_big_wide.png">
+                </div>
+                <div class="row">
+                    <div class="col s4 center-align">
+                        <a class="waves-effect waves-red btn-flat" id="child">HEROES LOGIN</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/if}}
 
 <!-- Parent Modal Structure -->
 <div id="parentModal" class="modal">

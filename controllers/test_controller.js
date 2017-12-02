@@ -7,7 +7,15 @@ var router = express.Router();
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function (req, res) {
-    res.render('login');
+    res.render('login',{loginPage:true});
+});
+
+router.get("/parent-login", function (req, res) {
+    res.render('login',{parentLoginPage:true});
+});
+
+router.get("/child-login", function (req, res) {
+    res.render('login',{childLoginPage:true});
 });
 
 router.get("/login-parent", function (req, res) {
@@ -140,7 +148,7 @@ router.get("/missions", function (req, res) {
     };
 
     res.render('missions', {layout: 'child_layout', missions_assigned: missions_assigned, mission_name: mission_name, mission_pt_val: mission_pt_val, mission_desc: mission_desc});
-})
+});
 
 // Export routes for server.js to use.
 module.exports = router;
