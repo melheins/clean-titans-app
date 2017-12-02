@@ -10,6 +10,10 @@ router.get("/", function (req, res) {
     res.render('login');
 });
 
+router.get("/login-parent", function (req, res) {
+    res.render('login');
+});
+
 router.get("/parent", function (req, res) {
 
     var children = [
@@ -48,7 +52,34 @@ router.get("/parent", function (req, res) {
 
     var missionsAppr;
 
-    res.render('parent', {layout: 'parent_layout', child: children, reward_approval: rewardsAppr, mission_approval: missionsAppr, mission:missions, reward:rewards});
+    res.render('parent', {layout: 'parent_layout',parentSummaryPage:true, child: children, reward_approval: rewardsAppr, mission_approval: missionsAppr, mission:missions, reward:rewards});
+});
+
+
+router.get("/parent-team", function (req, res) {
+
+    var children = [
+        {
+            "name": "test01",
+            "nickname": "Bobbie",
+            "avatar": "assets/images/childavatars/batman.jpg"
+        },
+        {
+            "name": "test02",
+            "nickname": "Johnny",
+            "avatar": "assets/images/childavatars/spiderman.jpg"
+        }];
+
+    var rewardsAppr;
+
+    var missionsAppr;
+
+    res.render('parent', {layout: 'parent_layout', parentFamilyPage:true, child: children, reward_approval: rewardsAppr, mission_approval: missionsAppr});
+});
+
+router.get("/parent-add-child", function (req, res) {
+
+    res.render('parent', {layout: 'parent_layout', parentAddChildPage:true});
 });
 
 router.get("/child", function (req, res) {
