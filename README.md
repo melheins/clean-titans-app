@@ -29,6 +29,10 @@ NPM Packages Used
 *   path
 *   sequelize
 
+Additional Programs
+*Backplane
+*Docker
+
 Project Management
 *   Google Drive
 *   wireframe.cc
