@@ -19,6 +19,10 @@
                     </div>
                 </div>
             </ul>
+            <div class="card footer center-align">
+                <a href="/child-missions">See More Missions!</a>
+                <a class="btn-floating btn-large waves-effect waves-light red" href="/child-missions"><i class="material-icons">add</i></a>
+            </div>
         </div>
         <div class="col s12 m6">
             <ul class="collection with-header white">
@@ -33,6 +37,10 @@
                     </div>
                 </div>
             </ul>
+            <div class="card footer center align">
+                <a href="/child-rewards">Claim Your Rewards!</a>
+                <a class="btn-floating btn-large waves-effect waves-light red" href="/child-rewards"><i class="material-icons">add</i></a>
+            </div>
         </div>
     </div>
 {{/if}}
@@ -47,8 +55,8 @@
                         {{#each missions_assigned}}
                             <a href="#!" class="collection-item">
                                 <h3 class="center-align black-text">{{mission_title}}</h3>
-                                <h5 class="center-align black-text">{{mission_point_value}}</h5>
-                                <p class="center-align black-text">{{mission_description}}</p>
+                                <h5 class="center-align black-text">Worth: {{mission_point_value}} Points</h5>
+                                <p class="black-text">{{mission_description}}</p>
                             </a>
                         {{/each}}
                     </div>
@@ -59,8 +67,8 @@
 {{/if}}
 
 {{#if childRewardsPage}}
-    <div id="child-summary-area" class="row">
-        <div class="col s12 m6">
+    <div class="row">
+        <div class="col s12 m8 offset-m2">
             <ul class="collection with-header white">
                 <li class="collection-header red accent-4"><h4 class="center-align">Rewards Earned</h4></li>
                 <div class="row">
@@ -68,7 +76,28 @@
                         {{#each rewards_available}}
                             <a href="#!" class="collection-item">
                                 <h3 class="center-align black-text">{{reward_id}}</h3>
-                                <h5 class="center-align black-text">{{reward_points_required}}</h5>
+                                <h5 class="center-align black-text">Cost: {{reward_points_required}} Points</h5>
+                            </a>
+                        {{/each}}
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </div>
+{{/if}}
+
+{{#if childComicsPage}}
+    <div class="row">
+        <div class="col s12 m8 offset-m2">
+            <ul class="collection with-header white">
+                <li class="collection-header red accent-4"><h4 class="center-align">Comics Earned</h4></li>
+                <div class="row">
+                    <div class="col s8 offset-s2">
+                        {{#each missions_assigned}}
+                            <a href="#!" class="collection-item">
+                                <h3 class="center-align black-text">{{mission_title}}</h3>
+                                <h5 class="center-align black-text">Worth: {{mission_point_value}} Points</h5>
+                                <p class="black-text">{{mission_description}}</p>
                             </a>
                         {{/each}}
                     </div>
