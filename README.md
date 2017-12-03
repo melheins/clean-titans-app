@@ -5,6 +5,7 @@ An app to teach kids responsibility.  Kids earn points by completing daily tasks
 Children can redeem rewards for comic books or parent approved rewards such as ice cream, tv time.
 
 ## App Specifications
+[Deployed via Backplane.io](http://determined-prince-22.backplaneapp.io/)
 https://tranquil-lowlands-50596.herokuapp.com/ | https://git.heroku.com/tranquil-lowlands-50596.git
 ...
 
@@ -18,27 +19,25 @@ https://tranquil-lowlands-50596.herokuapp.com/ | https://git.heroku.com/tranquil
 
 ## Technologies used
 NPM Packages Used
-*   body-parser
-*   dotenv
-*   express
-*   express-handlebars
-*   firebase
-*   method-override
-*   mysql
-*   mysql2
-*   path
-*   sequelize
+*   [body-parser](https://www.npmjs.com/package/body-parser)
+*   [dotenv](https://www.npmjs.com/package/dotenv)
+*   [express](https://www.npmjs.com/package/express)
+*   [express-handlebars](https://www.npmjs.com/package/express-handlebars)
+*   [firebase](https://www.npmjs.com/package/firebase)
+*   [method-override](https://www.npmjs.com/package/method-override)
+*   [mysql](https://www.npmjs.com/package/mysql)
+*   [mysql2](https://www.npmjs.com/package/mysql2)
+*   [path](https://www.npmjs.com/package/path)
+*   [sequelize](https://www.npmjs.com/package/sequelize)
 
 Additional Programs
-*Backplane
-*Docker
+*   [Backplane.io](https://www.backplane.io/)
+*   [Docker](https://www.docker.com/)
 
 Project Management
-*   Google Drive
-*   wireframe.cc
-*   Kanbanchi Gdrive App - Project Plan, Card Sort
-
-
+*   [Google Drive](https://drive.google.com/)
+*   [wireframe.cc](https://wireframe.cc/)
+*   [Kanbanchi Gdrive App](https://www.kanbanchi.com/) - Project Plan, Card Sort
 
 
 ## Installation

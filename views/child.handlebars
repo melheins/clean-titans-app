@@ -46,8 +46,8 @@
                     <div class="col s8 offset-s2">
                         {{#each missions_assigned}}
                             <a href="#!" class="collection-item">
-                                <p class="center-align black-text">{{mission_title}}</p>
-                                <p class="center-align black-text">{{mission_point_value}}</p>
+                                <h3 class="center-align black-text">{{mission_title}}</h3>
+                                <h5 class="center-align black-text">{{mission_point_value}}</h5>
                                 <p class="center-align black-text">{{mission_description}}</p>
                             </a>
                         {{/each}}
@@ -65,10 +65,10 @@
                 <li class="collection-header red accent-4"><h4 class="center-align">Rewards Earned</h4></li>
                 <div class="row">
                     <div class="col s8 offset-s2">
-                        {{#each rewards_availab}}
+                        {{#each rewards_available}}
                             <a href="#!" class="collection-item">
-                                <p class="center-align black-text">{{reward_id}}</p>
-                                <p class="center-align black-text">{{reward_points_required}}</p>
+                                <h3 class="center-align black-text">{{reward_id}}</h3>
+                                <h5 class="center-align black-text">{{reward_points_required}}</h5>
                             </a>
                         {{/each}}
                     </div>
