@@ -59,3 +59,10 @@ CREATE TABLE rewards_earned (
   reward_category VARCHAR(50),
 
 );
+
+--##Comics Table##
+CREATE TABLE comics (
+  comic_id VARCHAR(100) PRIMARY KEY,
+  comic_points_required INT NOT NULL,
+  comic_earned_status VARCHAR(1) DEFAULT 'I'
+);
