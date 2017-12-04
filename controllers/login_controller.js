@@ -1,5 +1,5 @@
 var express = require("express");
-
+var firebase = require("firebase")
 var router = express.Router();
 
 // Import the model (.js) to use its database functions.
