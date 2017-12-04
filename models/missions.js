@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
 
-  const Missions = sequelize.define("missions", {
+  const missions = sequelize.define("missions", {
     mission_title: {
       type: DataTypes.STRING,
       allowNull: false
@@ -17,5 +17,10 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
     }
   })
-  return Missions
+  missions.associate = function (models) {
+    missions.hasMany(models.active_missions, {
+      onDelete: "cascade"
+    })
+  }
+  return missions
 }

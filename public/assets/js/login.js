@@ -1,3 +1,5 @@
+
+
 $(document).ready(function() {
   //Initialize firebase
   var config = {
@@ -8,7 +10,9 @@ $(document).ready(function() {
      storageBucket: "clean-titans.appspot.com",
      messagingSenderId: "184154882931"
    };
-   firebase.initializeApp(config);
+   if (!firebase.apps.length) {
+      firebase.initializeApp(config);
+  }
    var uid
    firebase.auth().onAuthStateChanged(function (user) {
      if (user) uid = user.uid
@@ -78,7 +82,7 @@ $(document).ready(function() {
    firebaseLogIn(email, password, userDiv, passDiv)
   }
  }
- 
+
  //function for firebase login
  firebaseLogIn = function (email, password, userDiv, passDiv) {
    firebase.auth().signInWithEmailAndPassword(email, password)
@@ -99,5 +103,4 @@ $(document).ready(function() {
       //successfull login
     } else uid = user.uid
  }
-
 })

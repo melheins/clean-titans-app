@@ -1,8 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
 
-
   var parents = sequelize.define("parents", {
-
     first_name: {
       type: DataTypes.STRING,
       allowNull: false
@@ -20,7 +18,7 @@ module.exports = function (sequelize, DataTypes) {
   parents.associate = function (models) {
     parents.hasMany(models.children, {
       onDelete: "cascade"
-    })
+    });
     parents.hasMany(models.active_rewards, {
       onDelete: "cascade"
     })
