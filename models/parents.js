@@ -19,6 +19,9 @@ module.exports = function (sequelize, DataTypes) {
     parents.hasMany(models.children, {
       onDelete: "cascade"
     })
+    parents.hasMany(models.active_rewards, {
+      onDelete: "cascade"
+    })
   }
 
   return parents;

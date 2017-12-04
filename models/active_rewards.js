@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-  const RewardsActive = sequelize.define("active_awards", {
+  const active_rewards = sequelize.define("active_awards", {
     reward_name: {
       type: DataTypes.STRING,
       allowNull: false
@@ -24,12 +24,19 @@ module.exports = function (sequelize, DataTypes) {
     }
   });
 
-  /*RewardsActive.associate = function (models) {
-    RewardsActive.belongsTo(models.Children, {
+  active_rewards.associate = function (models) {
+    active_rewards.belongsTo(models.children, {
       foreignKey: {
         allowNull: false
       }
-    })
-  }*/
-  return RewardsActive
+    }),
+    active_rewards.belongsTo(models.parents, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+
+  };
+  console.log("loaded");
+  return active_rewards
 };
