@@ -11,7 +11,7 @@ CREATE TABLE parents (
   parent_id  INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   first_name VARCHAR(30),
   last_name  VARCHAR(30),
-  uid: INT
+  uid INT
 );
 
 --##Child Table##
@@ -31,7 +31,7 @@ CREATE TABLE child_mission_list (
   child_id            INT,
   mission_id          VARCHAR(30),
   mission_status      VARCHAR(1)   DEFAULT 'I',
-  mission_status_date DATE         DEFAULT SYSDATE(),
+  mission_status_date TIMESTAMP DEFAULT NOW(),
   FOREIGN KEY (child_id) REFERENCES children (child_id),
   FOREIGN KEY (mission_id) REFERENCES mission (mission_id)
 );
@@ -57,7 +57,7 @@ CREATE TABLE rewards_to_earn (
 CREATE TABLE rewards_earned (
   reward_id VARCHAR(50) PRIMARY KEY,
   reward_points_required INT NOT NULL,
-  reward_category VARCHAR(50),
+  reward_category VARCHAR(50)
 
 );
 

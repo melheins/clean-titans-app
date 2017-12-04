@@ -1,5 +1,3 @@
-
-
 $(document).ready(function() {
   //Initialize firebase
   var config = {
@@ -49,4 +47,5 @@ $(document).ready(function() {
            console.log(errorCode)
        } else uid = user.uid
  }
+
 })

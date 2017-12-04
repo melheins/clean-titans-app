@@ -1,6 +1,8 @@
 module.exports = function (sequelize, DataTypes) {
 
+
   var parents = sequelize.define("parents", {
+
     first_name: {
       type: DataTypes.STRING,
       allowNull: false

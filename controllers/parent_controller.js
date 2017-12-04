@@ -1,5 +1,9 @@
 var express = require("express");
+
+var Parents = require("../models/Parents")
+
 var db = require("../models");
+
 var router = express.Router();
 
 // Import the model (.js) to use its database functions.
@@ -89,9 +93,11 @@ router.get("/parent-edit-child", function (req, res) {
 
     res.render('parent', {layout: 'parent_layout', parentEditChildPage:true});
 });
+
 router.post("/parent", function (req, res) {
   console.log("router " + req.body)
   db.Parents.create ({
+    
     first_name: req.body.first_name,
     last_name: req.body.last_name,
     uid: req.body.uid
