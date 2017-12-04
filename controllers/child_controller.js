@@ -70,7 +70,7 @@ router.get("/child-rewards", function (req, res) {
         "nickname": "Sylar"
     };
 
-    res.render('child', {layout: 'child_layout', childRewardsPage:true, rewards_available: rewards_available, child: hero});
+    res.render('child', {layout: 'child_layout', childRewardsPage:true, rewards: rewards_available, child: hero});
 });
 
 router.get('/child-comics', function (req, res) {
@@ -80,10 +80,11 @@ router.get('/child-comics', function (req, res) {
     };
 
     var comics_earned = {
+        "comic_id": "Batman"
+    };
 
-
-    }
-})
+    res.render('child', {layout: 'child_layout', childsComicsPage:true, child: hero, comics: comics_earned});
+});
 
 // Export routes for server.js to use.
 module.exports = router;
