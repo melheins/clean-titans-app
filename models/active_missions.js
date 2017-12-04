@@ -11,6 +11,7 @@ module.exports = function (sequelize, DataTypes) {
             defaultValue: DataTypes.NOW
         }
     });
+
     active_missions.associate = function (models) {
         active_missions.belongsTo(models.missions, {
             foreignKey: {
