@@ -1,10 +1,10 @@
 --#Schema#
 
-DROP DATABASE IF EXISTS clean_titans_db;
+DROP DATABASE IF EXISTS x1vm9o4shp876fga;
 
-CREATE DATABASE clean_titans_db;
+CREATE DATABASE x1vm9o4shp876fga;
 
-USE clean_titans_db;
+USE x1vm9o4shp876fga;
 
 --##Parent Table##
 CREATE TABLE parents (
@@ -25,6 +25,15 @@ CREATE TABLE children (
   FOREIGN KEY (parent_id) REFERENCES parents (parent_id)
 );
 
+--##Missions Table##
+CREATE TABLE mission (
+  mission_id          VARCHAR(30) PRIMARY KEY,
+  mission_title       VARCHAR(45),
+  mission_point_value INT NOT NULL,
+  mission_decription  VARCHAR(200),
+  mission_video_url   VARCHAR(200)
+);
+
 --##Child's Missions Table##
 CREATE TABLE child_mission_list (
   seq_no              INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -34,15 +43,6 @@ CREATE TABLE child_mission_list (
   mission_status_date TIMESTAMP DEFAULT NOW(),
   FOREIGN KEY (child_id) REFERENCES children (child_id),
   FOREIGN KEY (mission_id) REFERENCES mission (mission_id)
-);
-
---##Missions Table##
-CREATE TABLE mission (
-  mission_id          VARCHAR(30) PRIMARY KEY,
-  mission_title       VARCHAR(45),
-  mission_point_value INT NOT NULL,
-  mission_decription  VARCHAR(200),
-  mission_video_url   VARCHAR(200)
 );
 
 --##Child's Rewards Table##
@@ -58,7 +58,7 @@ CREATE TABLE rewards_earned (
   reward_id VARCHAR(50) PRIMARY KEY,
   reward_points_required INT NOT NULL,
   reward_category VARCHAR(50)
-
+  FOREIGN KEY (reward_id) REFERNCES rewards_to_earn (reward_id)
 );
 
 --##Comics Table##
