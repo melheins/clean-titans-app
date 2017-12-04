@@ -5,8 +5,8 @@ An app to teach kids responsibility.  Kids earn points by completing daily tasks
 Children can redeem rewards for comic books or parent approved rewards such as ice cream, tv time.
 
 ## App Specifications
-https://tranquil-lowlands-50596.herokuapp.com/ | https://git.heroku.com/tranquil-lowlands-50596.git
-...
+[Available for viewing on heroku, via backplane.io](https://determined-prince-22.backplaneapp.io/)
+https://tranquil-lowlands-50596.herokuapp.com/
 
 ## Authors
 * [Valarie Regas](https://github.com/ValarieR)
