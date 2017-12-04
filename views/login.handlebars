@@ -5,12 +5,24 @@
             <div class="center-align">
                 <h3>Please Log In To Save The Day!</h3>
             </div>
+
             <div class="row">
                 <div class="col s6 center-align">
                     <a class="waves-effect waves-red btn-flat" href="/parent-login">Parent</a>
                 </div>
                 <div class="col s6 center-align">
                     <a class="waves-effect waves-red btn-flat" href="/child-login">Child</a>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col s6 center-align">
+                    <a class="waves-effect waves-red btn-flat" id="parent">Parent</a>
+                </div>
+                <div class="col s6 center-align">
+                    <a class="waves-effect waves-red btn-flat" id="child">Child</a>
                 </div>
             </div>
         </div>
@@ -130,13 +142,13 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input placeholder="Email Address" id="email" type="email" class="validate">
+                    <input placeholder="Email Address" id="create-email" type="email" class="validate">
                     <label for="email">Email</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input placeholder="Choose Password" id="password" type="password" class="validate">
+                    <input placeholder="Choose Password" id="create-password" type="password" class="validate">
                     <label for="password">Password</label>
                 </div>
             </div>
@@ -148,7 +160,7 @@
             </div>
         </div>
         <div class="modal-footer">
-            <a href="/parent" class="modal-action modal-close waves-effect waves-green btn-flat">Create!</a>
+            <a href="#" class="waves-effect waves-green btn-flat" id="create-account">Create!</a>
         </div>
     </div>
 </div>

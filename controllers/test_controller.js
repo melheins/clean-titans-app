@@ -22,6 +22,10 @@ router.get("/login-parent", function (req, res) {
     res.render('login');
 });
 
+router.get("/login-parent", function (req, res) {
+    res.render('login');
+});
+
 router.get("/parent", function (req, res) {
 
     var children = [
@@ -94,13 +98,11 @@ router.get("/child", function (req, res) {
 
     var missions_assigned = [
         {
-            "mission_id": "sample1"
+            "mission_title": "sample1"
         },
         {
-            "mission_id": "sample2"
+            "mission_title": "sample2"
         }];
-
-    console.log(missions_assigned);
 
     var rewards_earned = [
         {
@@ -114,40 +116,48 @@ router.get("/child", function (req, res) {
         "nickname": "Sylar"
     };
 
-    console.log(rewards_earned);
-
-    res.render('child', {layout: 'child_layout', missions_assigned: missions_assigned, rewards_earned: rewards_earned, child: hero});
+    res.render('child', {layout: 'child_layout', childSummaryPage:true, missions_assigned: missions_assigned, rewards_earned: rewards_earned, child: hero});
 });
 
-// mission_title
-//     mission_point_value
-//     mission_decription
 
-router.get("/missions", function (req, res) {
+router.get("/child-missions", function (req, res) {
+
+    var hero = {
+        "nickname": "Sylar"
+    };
 
     var missions_assigned = [
         {
-            "mission_id": "sample1"
+            "mission_id": "sample1",
+            "mission_title": "sweep the floor",
+            "mission_point_value": 5,
+            "mission_description": "Sweep with the broom by making short motions across the floor. Try to be careful not to fling dust everywhere by keeping each sweep short. Sweep all dust" +
+            "and such to one location. sweep everything into the dustpan, then dump the dustpan contents into the trashcan, and put the broom and dustpan away."
         },
         {
-            "mission_id": "sample2"
+            "mission_id": "sample2",
+            "mission_title": "unload the dishwasher",
+            "mission_point_value": 7,
+            "mission_description": "Take all dishes out of the washer, and put them where they go in the kitchen." +
+            "Double check to be sure they are clean!"
         }];
 
-    var mission_name = {
-        "mission_title": "sweep the floor"
+    res.render('child', {layout: 'child_layout',childMissionsPage:true, missions_assigned: missions_assigned, child: hero});
+});
+
+router.get("/child-rewards", function (req, res) {
+
+    var rewards_available = {
+
+        "reward_id": "ice cream",
+        "reward_points_required": 3
     };
 
-    var mission_pt_val = {
-        "mission_point_value": 9
+    var hero = {
+        "nickname": "Sylar"
     };
 
-    var mission_desc = {
-
-        "mission_description": "Sweep with the broom by making short motions across the floor. Try to be careful not to fling dust everywhere by keeping each sweep short. Sweep all dust" +
-        "and such to one location. sweep everything into the dustpan, then dump the dustpan contents into the trashcan, and put the broom and dustpan away."
-    };
-
-    res.render('missions', {layout: 'child_layout', missions_assigned: missions_assigned, mission_name: mission_name, mission_pt_val: mission_pt_val, mission_desc: mission_desc});
+    res.render('child', {layout: 'child_layout', childRewardsPage:true, rewards_available:rewards_available, child: hero});
 });
 
 // Export routes for server.js to use.

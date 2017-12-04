@@ -10,7 +10,8 @@ USE clean_titans_db;
 CREATE TABLE parents (
   parent_id  INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   first_name VARCHAR(30),
-  last_name  VARCHAR(30)
+  last_name  VARCHAR(30),
+  uid: INT
 );
 
 --##Child Table##
@@ -55,5 +56,14 @@ CREATE TABLE rewards_to_earn (
 --##Rewards Table##
 CREATE TABLE rewards_earned (
   reward_id VARCHAR(50) PRIMARY KEY,
-  reward_points_required INT NOT NULL
+  reward_points_required INT NOT NULL,
+  reward_category VARCHAR(50),
+
+);
+
+--##Comics Table##
+CREATE TABLE comics (
+  comic_id VARCHAR(100) PRIMARY KEY,
+  comic_points_required INT NOT NULL,
+  comic_earned_status VARCHAR(1) DEFAULT 'I'
 );
