@@ -10,7 +10,8 @@ USE clean_titans_db;
 CREATE TABLE parents (
   parent_id  INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   first_name VARCHAR(30),
-  last_name  VARCHAR(30)
+  last_name  VARCHAR(30),
+  uid: INT
 );
 
 --##Child Table##
