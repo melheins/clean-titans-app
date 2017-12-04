@@ -1,5 +1,4 @@
 var express = require("express");
-var firebase = require("firebase")
 var router = express.Router();
 
 // Import the model (.js) to use its database functions.
@@ -21,7 +20,6 @@ router.get("/child-login", function (req, res) {
 router.get("/login-parent", function (req, res) {
     res.render('login');
 });
-
 
 // Export routes for server.js to use.
 module.exports = router;
