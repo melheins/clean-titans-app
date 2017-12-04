@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-  const MissionsActive = sequelize.define("active_missions", {
+  const active_missions = sequelize.define("active_missions", {
     mission_status: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -12,18 +12,18 @@ module.exports = function (sequelize, DataTypes) {
     }
 
   });
-  /*MissionsActive.associate = function (models) {
-    MissionsActive.belongsTo(models.Missions, {
+  active_missions.associate = function (models) {
+    active_missions.belongsTo(models.missions, {
       foreignKey: {
         allowNull: false
       }
     }),
-    MissionsActive.belongsTo(models.Children, {
+    active_missions.belongsTo(models.children, {
       foreignKey: {
         allowNull: false
       }
     });
 
-  };*/
-  return MissionsActive
+  };
+  return active_missions
 };

@@ -18,7 +18,9 @@ $(document).ready(function() {
 
    //Set up listeners
   $(document).on("click", "#create-account", createParent);
-  $(document).on("click", )
+  $(document).on("click", "#parent_log_in", parentLogin);
+  $(document).on("click", "#child_log_in", childLogin);
+
   //function to add new u=parent to db and firebase
   function createParent() {
     event.preventDefault();
@@ -33,13 +35,16 @@ $(document).ready(function() {
     addUser(email, password)
     .then(addParent({first_name, last_name, uid};
   }
+
   //function for creting parent
  function addParent(parentData) {
    $.post("/api/parents", parentData)
  }
+
  //add user to firebase
  function addUser(email, password) {
-   firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error, user) {
+   firebase.auth().createUserWithEmailAndPassword(email, password)
+     .catch(function (error, user) {
        // Handle Errors
        var errorCode = error.code;
        var errorMessage = error.message;
@@ -48,5 +53,52 @@ $(document).ready(function() {
        } else if (errorCode){
            console.log(errorCode)
        } else uid = user.uid
+     }
+ }
+
+ //function for parent login
+ function parentLogin() {
+   event.preventDefault();
+   var userDiv  = $('#parent_email')
+   var passDiv = $('#parent_password')
+   var email = userDiv.val().trim();
+   var password = passDiv.val().trim()
+   if (!email || !password) return
+   firebaseLogIn(email, password, userDiv, passDiv)
+  }
+ }
+
+ //function for child login
+ function childLogin() {
+   event.preventDefault();
+   var userDiv  = $('#child_user_name')
+   var passDiv = $('#child_password')
+   var userName = userDiv.val().trim();
+   var email = user + "@cleantitans.com";
+   var password = passDiv.val().trim()
+   if (!email || !password) return
+   firebaseLogIn(email, password, userDiv, passDiv)
+  }
+ }
+ 
+ //function for firebase login
+ firebaseLogIn = function (email, password, userDiv, passDiv) {
+   firebase.auth().signInWithEmailAndPassword(email, password)
+   .catch(function (error, user) {
+     //Handle Errors
+      if(error) {
+        errorCode = error.code;
+        errorMessage = error.message;
+        if (errorCode === 'auth/wrong-password') {
+          passDiv.after('<p>' + errorMessage + '</p>');
+        } else if (errorCode === 'auth/invalid-email' || errorCode === 'auth/user-not-found') {
+          alert(errorMessage);
+          userDiv.after('<p>' + errorMessage + '</p>');
+        } else {
+          console.log(errorCode)
+        }
+      }
+      //successfull login
+    } else uid = user.uid
  }
 })

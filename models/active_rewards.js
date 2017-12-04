@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-  const active_rewards = sequelize.define("active_awards", {
+  const active_rewards = sequelize.define("active_rewards", {
     reward_name: {
       type: DataTypes.STRING,
       allowNull: false
@@ -37,6 +37,5 @@ module.exports = function (sequelize, DataTypes) {
     });
 
   };
-  console.log("loaded");
   return active_rewards
 };

@@ -17,12 +17,13 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     }
-  })
+  });
+
   rewards.associate = function (models) {
     rewards.hasMany(models.active_rewards, {
       onDelete: "cascade"
     }),
-    rewards.belongsTo(mdels.chilren, {
+    rewards.belongsTo(models.children, {
       foreignKey: {
         allowNull: false
       }
