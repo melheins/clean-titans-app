@@ -11,6 +11,7 @@ module.exports = function (sequelize, DataTypes) {
             defaultValue: DataTypes.NOW
         }
     });
+<<<<<<< HEAD
     active_missions.associate = function (models) {
         active_missions.belongsTo(models.missions, {
             foreignKey: {
@@ -25,4 +26,13 @@ module.exports = function (sequelize, DataTypes) {
 
     };
     return active_missions
+=======
+    active_missions.belongsTo(models.parents, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+  return active_missions
+>>>>>>> ks
 };
