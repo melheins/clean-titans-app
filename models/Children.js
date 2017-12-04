@@ -1,7 +1,7 @@
 module.exports = function (sequelize, DataTypes) {
 
-  const Children = sequelize.define("Children", {
-    name: {
+  const children = sequelize.define("children", {
+    first_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -23,12 +23,19 @@ module.exports = function (sequelize, DataTypes) {
     }
   });
 
-  Children.associate = function (models) {
-    Children.belongsTo(models.Parents, {
+ children.associate = function (models) {
+    children.belongsTo(models.parents, {
       foreignKey: {
         allowNull: false
       }
-    });
-  };
-  return Children;
+    }),
+    children.hasMany(models.active_rewards, {
+      onDelete: "cascade"
+    })
+    children.hasMany(models.active_missions, {
+      onDelete: "cascade"
+    })
+  }
+
+  return children;
 };
