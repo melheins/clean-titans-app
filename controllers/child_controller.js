@@ -1,9 +1,7 @@
 var express = require("express");
-
 var router = express.Router();
 
 // Import the model (.js) to use its database functions.
-//var burger = require("../models/index.js");
 
 // Create all our routes and set up logic within those routes where required.
 
@@ -29,7 +27,13 @@ router.get("/child", function (req, res) {
         "nickname": "Sylar"
     };
 
-    res.render('child', {layout: 'child_layout', childSummaryPage:true, missions_assigned: missions_assigned, rewards_earned: rewards_earned, child: hero});
+    res.render('child', {
+        layout: 'child_layout',
+        childSummaryPage: true,
+        missions_assigned: missions_assigned,
+        rewards_earned: rewards_earned,
+        child: hero
+    });
 });
 
 
@@ -55,7 +59,12 @@ router.get("/child-missions", function (req, res) {
             "Double check to be sure they are clean!"
         }];
 
-    res.render('child', {layout: 'child_layout',childMissionsPage:true, missions_assigned: missions_assigned, child: hero});
+    res.render('child', {
+        layout: 'child_layout',
+        childMissionsPage: true,
+        missions_assigned: missions_assigned,
+        child: hero
+    });
 });
 
 router.get("/child-rewards", function (req, res) {
@@ -70,7 +79,7 @@ router.get("/child-rewards", function (req, res) {
         "nickname": "Sylar"
     };
 
-    res.render('child', {layout: 'child_layout', childRewardsPage:true, rewards: rewards_available, child: hero});
+    res.render('child', {layout: 'child_layout', childRewardsPage: true, rewards: rewards_available, child: hero});
 });
 
 router.get('/child-comics', function (req, res) {
@@ -83,7 +92,7 @@ router.get('/child-comics', function (req, res) {
         "comic_id": "Batman"
     };
 
-    res.render('child', {layout: 'child_layout', childsComicsPage:true, child: hero, comics: comics_earned});
+    res.render('child', {layout: 'child_layout', childsComicsPage: true, child: hero, comics: comics_earned});
 });
 
 // Export routes for server.js to use.
