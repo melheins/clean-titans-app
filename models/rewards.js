@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-  const RewardsActive = sequelize.define("active_awards", {
+  const rewards = sequelize.define("rewards", {
     reward_name: {
       type: DataTypes.STRING,
       allowNull: false
@@ -16,20 +16,18 @@ module.exports = function (sequelize, DataTypes) {
     {
       type: DataTypes.STRING,
       allowNull: false
-    },
-    reward_status: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      defaultValue: "I"
     }
   });
 
-  /*RewardsActive.associate = function (models) {
-    RewardsActive.belongsTo(models.Children, {
+  rewards.associate = function (models) {
+    rewards.hasMany(models.active_rewards, {
+      onDelete: "cascade"
+    }),
+    rewards.belongsTo(models.children, {
       foreignKey: {
         allowNull: false
       }
     })
-  }*/
-  return RewardsActive
+  }
+  return rewards
 };
