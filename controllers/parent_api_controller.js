@@ -2,10 +2,10 @@ var express = require("express");
 var db = require("../models");
 var router = express.Router();
 
-router.get("/api/parents/:uid", function (req, res) {
+router.get("/api/parents/:id", function (req, res) {
   db.parents.findOne({
     where: {
-      uid: req.params.uid
+      id: req.params.id
     },
     include: [db.children, db.active_rewards, db.active_missions]
   }).then(function (parentData) {
@@ -14,8 +14,8 @@ router.get("/api/parents/:uid", function (req, res) {
 });
 router.post("/api/parents", function (req, res) {
   db.parents.create(req.body)
-  .then(function (parentData) {
-    res.json(parentData)
+  .then(function (newParent) {
+    res.json(newParent)
   })
 });
 

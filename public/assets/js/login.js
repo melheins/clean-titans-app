@@ -71,10 +71,10 @@ $(document).ready(function() {
 function addParent(parentData) {
   console.log(parentData)
   $.post("/api/parents", parentData)
-  .then(function (parentData) {
-    var url = window.location.host + "/parent/" + parentData.uid
+  .then(function (newParent) {
+    var url = location.host + "/parent/" + newParent.id
     console.log(url);
-    //window.location.href = url
+    location.href = url
   })
 }
 
@@ -87,7 +87,6 @@ function addParent(parentData) {
    var password = passDiv.val().trim()
    if (!email || !password ) return
    firebaseLogIn(email, password, userDiv, passDiv);
-   location.replace(window.location.host + "/parents/" + uid)
  }
 
  //function for child login

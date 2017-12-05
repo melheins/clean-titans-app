@@ -10,7 +10,7 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false
     },
     uid: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false
     }
   });
