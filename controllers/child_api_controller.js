@@ -16,6 +16,16 @@ router.get("/api/children/missions", function (req, res) {
   })
 })
 
+router.get("/api/children/get/:uid", function (req, res) {
+  db.children.findOne({
+    where: {
+      uid: req.params.id
+    }
+  }).then(function (id) {
+    res.json(parentId.id)
+  })
+})
+
 router.post("/api/children/missions", function (req, res) {
   db.active_missions.create(req.body)
     .then(function (mission) {

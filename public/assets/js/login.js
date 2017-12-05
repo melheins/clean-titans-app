@@ -99,6 +99,16 @@ function addParent(parentData) {
    var password = passDiv.val().trim()
    if (!email || !password) return
    firebaseLogIn(email, password, userDiv, passDiv)
+   .then(function () {
+       var url = "/api/children/get/" + uid
+       $.get(url)
+       .then(function (id) {
+         console,log(id)
+         var url = "/children/" + id
+         console.log(url);
+       })
+     });
+   })
  }
 
  //function for firebase login
@@ -123,17 +133,7 @@ function addParent(parentData) {
         uid = user.uid;
       }
 
-    }).then(function (accountType) {
-      console.log(accountType);
-      var url = "/api/" + type + "/get/" + uid
-      console.log(url);
-      $.get(url)
-      .then(function (id) {
-        console,log(id)
-        var url = "/" + type + "/" + id
-        console.log(url);
-      })
-    });
+    }).
   }
 
 })
