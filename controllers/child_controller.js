@@ -25,7 +25,7 @@ router.get("/child", function (req, res) {
         }];
 
     var hero = {
-        "nickname": children.nickname
+        "nickname": "sylar"
     };
 
     res.render('child', {
@@ -41,7 +41,7 @@ router.get("/child", function (req, res) {
 router.get("/child-missions", function (req, res) {
 
     var hero = {
-        "nickname": children.nickname
+        "nickname": "sylar"
     };
 
     var missions_assigned = [
