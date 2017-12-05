@@ -25,7 +25,7 @@ router.get("/parent", function (req, res) {
   });
 
 router.get("/parent/:uid", function (req, res) {
-  var uid = req.params.uid
+  var uid = req.params.uid;
   $.get("/api/parents/" + uid)
   .then(function (parentData) {
     var children = [parentData.children];
