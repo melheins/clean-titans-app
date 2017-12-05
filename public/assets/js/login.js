@@ -27,41 +27,57 @@ $(document).ready(function() {
   function createParent() {
     event.preventDefault();
     //get values
-    var email = $("#create_email").val();
-    var password = $("#create_password").val();
+    var email = $("#create_email").val().trim();
+    var password = $("#create_password").val().trim();
     var verify = $("#password_verify").val().trim();
-    var first_name = $("#create_first_name").val();
-    var last_name = $("#create_last_name").val();
+    var first_name = $("#create_first_name").val().trim();
+    var last_name = $("#create_last_name").val().trim();
     //validate form \
-    if (!email || !password || !first_name || !last_name || password != verify) return
+    if (!email || !password || !first_name || !last_name || password != verify) {
+      console.log(email + " " + password + " " + verify + " " + first_name + " " + last_name);
+      return}
+    console.log("clicked");
+
     //create firebase account
-    addUser(email, password);
-    addParent({first_name, last_name, uid});
-    location.replace(window.location.host + "/parents/" + uid)
+    addUser(email, password, last_name, first_name);
+
   }
 
-  //function for creting parent
- function addParent(parentData) {
-   $.post("/api/parents", parentData)
-   .then(function (parentData) {
-     console.log(parentData)
-   })
- }
 
  //add user to firebase
- function addUser(email, password) {
+ function addUser(email, password, first_name, last_name) {
    firebase.auth().createUserWithEmailAndPassword(email, password)
-     .catch(function (error, user) {
+     .catch(function (error) {
+       console.log(error)
+       console.log(user);
        // Handle Errors
        var errorCode = error.code;
        var errorMessage = error.message;
+
        if (errorCode === 'auth/email-already-in-use' || errorCode === 'auth/invalid-email') {
            $('#email').after('<p>' + errorMessage + '<p>');
-       } else if (errorCode){
+           return
+       } else {
            console.log(errorCode)
-       } else uid = user.uid
+           return
+       }
+   }).then(function (user) {
+     uid = user.uid;
+     addParent({first_name, last_name, uid})
    })
+
  }
+ //function for creting parent
+function addParent(parentData) {
+  console.log(parentData)
+  $.post("/api/parents", parentData)
+  .then(function (parentData) {
+    var url = window.location.host + "/parent/" + parentData.uid
+    console.log(url);
+    //window.location.href = url
+  })
+}
+
  //function for parent login
  function parentLogin() {
    event.preventDefault();
@@ -69,8 +85,6 @@ $(document).ready(function() {
    var passDiv = $('#parent_password')
    var email = userDiv.val().trim();
    var password = passDiv.val().trim()
-
-
    if (!email || !password ) return
    firebaseLogIn(email, password, userDiv, passDiv);
    location.replace(window.location.host + "/parents/" + uid)

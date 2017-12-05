@@ -21,13 +21,19 @@ router.get("/parent", function (req, res) {
     var children = [req.body.children];
     var rewards = [req.body.active_rewards];
     var missions = [req.body.active_missions];
-  
+
   });
 
 router.get("/parent/:uid", function (req, res) {
   var uid = req.params.uid
-  $.get("/api/parents/" + uid)
-  .then(function (parentData) {
+  console.log(uid)
+  db.parents.findOne({
+    where: {
+      uid: req.params.uid
+    },
+    include: [db.children, db.active_rewards, db.active_missions]
+  }).then(function (parentData) {
+    console.log(parentDate)
     var children = [parentData.children];
     var rewards = [parentData.active_rewards];
     var missions = [parentData.active_missions];
