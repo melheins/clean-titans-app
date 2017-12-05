@@ -76,6 +76,8 @@ router.get("/child-rewards", function (req, res) {
         "reward_points_required": 3
     };
 
+        console.log(rewards_available);
+
     var hero = {
         "nickname": "Sylar"
     };
