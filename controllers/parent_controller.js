@@ -3,7 +3,6 @@ var db = require("../models");
 var router = express.Router();
 
 // Import the model (.js) to use its database functions.
-//var burger = require("../models/index.js");
 
 // Create all our routes and set up logic within those routes where required.
 

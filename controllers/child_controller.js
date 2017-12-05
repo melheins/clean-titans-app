@@ -1,4 +1,5 @@
 var express = require("express");
+var db = require("../models");
 var router = express.Router();
 
 // Import the model (.js) to use its database functions.
@@ -7,24 +8,16 @@ var router = express.Router();
 
 router.get("/child", function (req, res) {
 
-    var missions_assigned = [
-        {
-            "mission_title": "sample1"
-        },
-        {
-            "mission_title": "sample2"
-        }];
+    var missions_assigned = {
+            "mission_title": active_missions.mission_title
+        };
 
-    var rewards_earned = [
-        {
-            "reward_id": "sample1"
-        },
-        {
-            "reward_id": "sample2"
-        }];
+    var rewards_earned = {
+            "reward_id": rewards.reward_name
+        };
 
     var hero = {
-        "nickname": "Sylar"
+        "nickname": children.nickname
     };
 
     res.render('child', {
@@ -40,24 +33,16 @@ router.get("/child", function (req, res) {
 router.get("/child-missions", function (req, res) {
 
     var hero = {
-        "nickname": "Sylar"
+        "nickname": children.nickname
     };
 
-    var missions_assigned = [
-        {
-            "mission_id": "sample1",
+    var missions_assigned = {
+            "mission_id": active_missions.mission_id,
             "mission_title": "sweep the floor",
             "mission_point_value": 5,
             "mission_description": "Sweep with the broom by making short motions across the floor. Try to be careful not to fling dust everywhere by keeping each sweep short. Sweep all dust" +
             "and such to one location. sweep everything into the dustpan, then dump the dustpan contents into the trashcan, and put the broom and dustpan away."
-        },
-        {
-            "mission_id": "sample2",
-            "mission_title": "unload the dishwasher",
-            "mission_point_value": 7,
-            "mission_description": "Take all dishes out of the washer, and put them where they go in the kitchen." +
-            "Double check to be sure they are clean!"
-        }];
+        };
 
     res.render('child', {
         layout: 'child_layout',
@@ -76,7 +61,7 @@ router.get("/child-rewards", function (req, res) {
     };
 
     var hero = {
-        "nickname": "Sylar"
+        "nickname": children.nickname
     };
 
     res.render('child', {layout: 'child_layout', childRewardsPage: true, rewards: rewards_available, child: hero});
@@ -85,7 +70,7 @@ router.get("/child-rewards", function (req, res) {
 router.get('/child-comics', function (req, res) {
 
     var hero = {
-        "nickname": "Sylar"
+        "nickname": children.nickname
     };
 
     var comics_earned = {

@@ -1,5 +1,12 @@
 module.exports = function (sequelize, DataTypes) {
     const active_missions = sequelize.define("active_missions", {
+        mission_id: {
+          type: DataTypes.INTEGER,
+        },
+        mission_title: {
+          type: DataTypes.STRING,
+          allowNull: false,
+        },
         mission_status: {
             type: DataTypes.STRING,
             allowNull: false,
