@@ -22,9 +22,16 @@ $(document).ready(function () {
   var childId =
   console.log(parentId)
   //set up listeners
-  $(document).on("click", "#create_child", createChild)
+  $(document).on("click", "#create_child", createChild);
+  $(document).on("click", ".alter", appendAndMove)
   //$(document).on("click", div, action)
 
+  //append parent id to links and change directory
+  function appendAndMove() {
+    event.preventDefault()
+    var url = $(this).attr("href") + "/" + parentId;
+    window.location = url
+  }
   //function to create child
   function createChild() {
     event.preventDefault();

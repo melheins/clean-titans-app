@@ -28,7 +28,7 @@ router.get("/child/:id", function (req, res) {
         "nickname": "sylar"
     };*/
 
-    return res.render('child', {
+    res.render('child', {
         layout: 'child_layout',
         childSummaryPage: true,
         missions_assigned: [], //
