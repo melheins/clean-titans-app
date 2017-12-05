@@ -95,7 +95,7 @@ $(document).ready(function () {
         };
         $.post("/api/children/missions", newMission)
         .then(function () {
-          $.get("/parent/" + parentId)
+          $.get("/parent/redirect/" + parentId)
         })
       }
     }
