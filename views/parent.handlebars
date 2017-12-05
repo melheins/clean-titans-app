@@ -25,7 +25,7 @@
                             </div>
                         </a>
                     {{/each}}
-                    <li class="collection-header"><a class="" href="/parent-team">View Team Details</a>
+                    <li class="collection-header"><a class="" href="/parent-team/{{pid}}">View Team Details</a>
                         <a class="btn-add-mission btn-floating fab waves-effect waves-light red"
                            href="/parent-add-child/{{pid}}"><i
                                 class="material-icons">add</i></a></li>
@@ -39,7 +39,7 @@
                     {{#each reward}}
                         <a href="#!" class="collection-item">{{title}} {{points}}pts</a>
                     {{/each}}
-                    <li class="collection-header"><a class="" href="/parent-rewards">View All</a>
+                    <li class="collection-header"><a class="" href="/parent-rewards/{{pid}}">View All</a>
                         <a class="disabled btn-add-reward btn-floating fab waves-effect waves-light red"
                            href="/parent-add-rewards/{{pid}}"><i
                                 class="material-icons">add</i></a></li>

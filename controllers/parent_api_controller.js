@@ -9,6 +9,28 @@ router.get("/api/parents/:id", function (req, res) {
     },
     include: [db.children, db.active_rewards, db.active_missions]
   }).then(function (parentData) {
+    var children = parentData.children;
+    var rewards = parentData.active_rewards;
+    var missions = parentData.active_missions;
+    var rewardsAppr = [];
+    var missionsAppr = [];
+    var newParams = []
+
+    //if no missions, set to false
+    if (missionsAppr.length === 0) missionsAppr = false;
+    else {
+      //check for missions that need approval
+      for (var i = 0; i < missions.length; i++) {
+        if (missions[i].mission_status === "W") missionsAppr.push(missions[i])
+      };
+    }
+
+    if (rewardsAppr.length === 0) rewardsAppr = false;
+    else {
+      for (var j = 0; j < missions.length; j++) {
+        if (rewards[j].reward_status === "W") rewardsAppr.push(rewards[j])
+      };
+    }
     res.json(parentData)
   })
 });

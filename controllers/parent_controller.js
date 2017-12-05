@@ -42,25 +42,40 @@ router.get("/parent/:id", function (req, res) {
 });
 
 
-router.get("/parent-team", function (req, res) {
+router.get("/parent-team/:id", function (req, res) {
+    var id = req.params.id;
+    db.parents.findOne({
+      where: {
+        id
+      },
+      include: [db.children, db.active_missions, db.active_rewards]
+    }).then(function (parentData) {
 
-    var children = [
-        {
-            "name": "test01",
-            "nickname": "Bobbie",
-            "avatar": "assets/images/childavatars/batman.jpg"
-        },
-        {
-            "name": "test02",
-            "nickname": "Johnny",
-            "avatar": "assets/images/childavatars/spiderman.jpg"
-        }];
+          var children = parentData.children;
+          var rewards = parentData.active_rewards;
+          var missions = parentData.active_missions;
+          var rewardsAppr = [];
+          var missionsAppr = [];
 
-    var rewardsAppr;
+          //if no missions, set to false
+          if (missionsAppr.length === 0) missionsAppr = false;
+          else {
+            //check for missions that need approval
+            for (var i = 0; i < missions.length; i++) {
+              if (missions[i].mission_status === "W") missionsAppr.push(missions[i])
+            };
+          }
 
-    var missionsAppr;
+          if (rewardsAppr.length === 0) rewardsAppr = false;
+          else {
+            for (var j = 0; j < missions.length; j++) {
+              if (rewards[j].reward_status === "W") rewardsAppr.push(rewards[j])
+            };
+          }
 
-    res.render('parent', {layout: 'parent_layout', parentFamilyPage:true, child: children, reward_approval: rewardsAppr, mission_approval: missionsAppr});
+      res.render('parent', {layout: 'parent_layout', parentFamilyPage:true, child: children, reward_approval: rewardsAppr, mission_approval: missionsAppr, pid:id});
+    })
+
 });
 
 router.get("/parent-add-child/:id", function (req, res) {
