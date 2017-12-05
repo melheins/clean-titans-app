@@ -7,44 +7,27 @@ var router = express.Router();
 
 // Create all our routes and set up logic within those routes where required.
 
-router.get("/parent/:uid", function (req, res) {
-
-    var children = [
-        {
-            "name": "test01",
-            "nickname": "Bobbie",
-            "avatar": "assets/images/childavatars/batman.jpg"
-        },
-        {
-            "name": "test02",
-            "nickname": "Johnny",
-            "avatar": "assets/images/childavatars/spiderman.jpg"
-        }];
-
-    var rewards = [
-        {
-            "title": "Cookie",
-            "points": "5"
-        },
-        {
-            "title": "Ice Cream",
-            "points": "5"
-        }];
-
-    var missions = [
-        {
-            "title": "Brush Teeth",
-            "points": "5"
-        },
-        {
-            "title": "Make Bed",
-            "points": "5"
-        }];
-
+router.get("/parent", function (req, res) {
+    //parese data from request
+    var children = [req.body.children];
+    var rewards = [req.body.active_rewards];
+    var missions = [req.body.active_missions];
     var rewardsAppr;
+    var missionsAppr [];
+    //check for missions that need approval
+    for (var i = 0; i > missions.length; i++) {
+      if (missions[i].mission_status === "W") missionsAppr.push(missions[i])
+    };
+    //if no missions, set to false
+    if (missionsAppr.length === 0) missionsAppr = false;
 
-    var missionsAppr;
+    for (var j = 0; j > missions.length; j++) {
+      if (rewards[j].reward_status === "W") rewardsAppr.push(rewards[j])
+    };
 
+    if (rewardsAppr.length === 0) rewardsAppr = false;
+
+req.body.
     res.render('parent', {layout: 'parent_layout',parentSummaryPage:true, child: children, reward_approval: rewardsAppr, mission_approval: missionsAppr, mission:missions, reward:rewards});
 });
 
