@@ -34,7 +34,7 @@ router.get("/api/parents/:id", function (req, res) {
     res.json(parentData)
   })
 });
-router.get("/api/parents/:uid", function (req, res) {
+router.get("/api/parent/:uid", function (req, res) {
   db.parents.findOne({
     where: {
       id: req.params.id
