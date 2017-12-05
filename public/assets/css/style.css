@@ -100,7 +100,8 @@ nav {
     width: 70px;
 }
 
-h4 {
+h4,
+.card-title {
     font-family: Badaboom, Helvetica, Arial, sans-serif;
 }
 

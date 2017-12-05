@@ -98,5 +98,11 @@ $(document).ready(function () {
           $.get("/parent/redirect/" + parentId)
         })
       }
-    }
-})
+    };
+
+  // add user id to paths
+  //   function parentMain () {
+  //       $(".parent_main").attr("href", "/parent/1")
+  //   }
+
+});
