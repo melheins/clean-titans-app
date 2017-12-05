@@ -8,13 +8,21 @@ var router = express.Router();
 
 router.get("/child", function (req, res) {
 
-    var missions_assigned = {
-            "mission_title": active_missions.mission_title
-        };
+    var missions_assigned = [
+        {
+            "mission_title": "sample1"
+        },
+        {
+            "mission_title": "sample2"
+        }];
 
-    var rewards_earned = {
-            "reward_id": rewards.reward_name
-        };
+    var rewards_earned = [
+        {
+            "reward_id": "sample1"
+        },
+        {
+            "reward_id": "sample2"
+        }];
 
     var hero = {
         "nickname": children.nickname
@@ -36,13 +44,21 @@ router.get("/child-missions", function (req, res) {
         "nickname": children.nickname
     };
 
-    var missions_assigned = {
-            "mission_id": active_missions.mission_id,
+    var missions_assigned = [
+        {
+            "mission_id": "sample1",
             "mission_title": "sweep the floor",
             "mission_point_value": 5,
             "mission_description": "Sweep with the broom by making short motions across the floor. Try to be careful not to fling dust everywhere by keeping each sweep short. Sweep all dust" +
             "and such to one location. sweep everything into the dustpan, then dump the dustpan contents into the trashcan, and put the broom and dustpan away."
-        };
+        },
+        {
+            "mission_id": "sample2",
+            "mission_title": "unload the dishwasher",
+            "mission_point_value": 7,
+            "mission_description": "Take all dishes out of the washer, and put them where they go in the kitchen." +
+            "Double check to be sure they are clean!"
+        }];
 
     res.render('child', {
         layout: 'child_layout',
@@ -70,7 +86,7 @@ router.get("/child-rewards", function (req, res) {
 router.get('/child-comics', function (req, res) {
 
     var hero = {
-        "nickname": children.nickname
+        "nickname": "Sylar"
     };
 
     var comics_earned = {
