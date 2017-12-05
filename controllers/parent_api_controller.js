@@ -34,13 +34,13 @@ router.get("/api/parents/:id", function (req, res) {
     res.json(parentData)
   })
 });
-router.get("/api/parents/:uid", function (req, res) {
+router.get("/api/parents/get/:uid", function (req, res) {
   db.parents.findOne({
     where: {
       id: req.params.id
     }
-  }).then(function (parentID) {
-    res.send(parentId.id)
+  }).then(function (id) {
+    res.json(parentId.id)
   })
 })
 

@@ -86,7 +86,7 @@ function addParent(parentData) {
    var email = userDiv.val().trim();
    var password = passDiv.val().trim()
    if (!email || !password ) return
-   firebaseLogIn(email, password, userDiv, passDiv, "parent");
+   firebaseLogIn(email, password, userDiv, passDiv, "parents");
  }
 
  //function for child login
@@ -98,13 +98,14 @@ function addParent(parentData) {
    var email = userName + "@cleantitans.com";
    var password = passDiv.val().trim()
    if (!email || !password) return
-   firebaseLogIn(email, password, userDiv, passDiv, "child")
+   firebaseLogIn(email, password, userDiv, passDiv)
  }
 
  //function for firebase login
- firebaseLogIn = function (email, password, userDiv, passDiv, type) {
+ firebaseLogIn = function (email, password, userDiv, passDiv, aaccountType) {
+   var type = aaccountType
    firebase.auth().signInWithEmailAndPassword(email, password)
-   .catch(function (error, user) {
+   .catch(function (error, user, passDiv, userDiv, ) {
      //Handle Errors
       if(error) {
         errorCode = error.code;
@@ -122,9 +123,13 @@ function addParent(parentData) {
         uid = user.uid;
       }
 
-    }).then(function (uid, type) {
-      $.get("/api/" + type = "/" + uid)
+    }).then(function (accountType) {
+      console.log(accountType);
+      var url = "/api/" + type + "/get/" + uid
+      console.log(url);
+      $.get(url)
       .then(function (id) {
+        console,log(id)
         var url = "/" + type + "/" + id
         console.log(url);
       })
