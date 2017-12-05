@@ -1,18 +1,29 @@
 var express = require("express");
-var db = require("../models");
 var router = express.Router();
 
 // Import the model (.js) to use its database functions.
+var db = require("../models");
 
 // Create all our routes and set up logic within those routes where required.
 
-<<<<<<< HEAD
+router.get("/test", function (req, res) {
+    db.Missions.findAll({
+
+    }).then(function (dbMissions) {
+        return dbMissions
+    })
+});
+
+// Create all our routes and set up logic within those routes where required.
+
 router.get("/parent", function (req, res) {
     //parese data from request
     var children = [req.body.children];
     var rewards = [req.body.active_rewards];
     var missions = [req.body.active_missions];
-=======
+  
+  });
+
 router.get("/parent/:uid", function (req, res) {
   var uid = req.params.uid
   $.get("/api/parents/" + uid)
@@ -20,7 +31,6 @@ router.get("/parent/:uid", function (req, res) {
     var children = [parentData.children];
     var rewards = [parentData.active_rewards];
     var missions = [parentData.active_missions];
->>>>>>> ks
     var rewardsAppr = [];
     var missionsAppr = [];
     //check for missions that need approval

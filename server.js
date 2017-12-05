@@ -34,12 +34,9 @@ app.set("view engine", "handlebars");
 
 // Routes
 // =============================================================
-<<<<<<< HEAD
 // var routes = require("./controllers/test_controller.js");
 // app.use("/", routes);
-=======
 
->>>>>>> ks
 
 var route1 = require("./controllers/login_controller.js");
 var route2 = require("./controllers/parent_controller.js");
