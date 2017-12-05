@@ -42,12 +42,13 @@ var route1 = require("./controllers/login_controller.js");
 var route2 = require("./controllers/parent_controller.js");
 var route3 = require("./controllers/child_controller.js");
 var route4 = require("./controllers/parent_api_controller.js");
+var route5 = require("./controllers/child_api_controller.js");
 
 app.use("/", route1);
 app.use("/", route2);
 app.use("/", route3);
 app.use("/", route4);
-
+app.use("/", route5);
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync({force: false}).then(function () {

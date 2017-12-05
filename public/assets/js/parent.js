@@ -18,9 +18,9 @@ $(document).ready(function () {
     if (user) uid = user.uid
   })
 
-  var parentID = window.location.pathname.split("/").pop()
-  var childID =
-  console.log(parentID)
+  var parentId = window.location.pathname.split("/").pop()
+  var childId =
+  console.log(parentId)
   //set up listeners
   $(document).on("click", "#create_child", createChild)
   //$(document).on("click", div, action)
@@ -35,16 +35,16 @@ $(document).ready(function () {
     var nickname = $("#create_nickname").val().trim()
     var email = first_name + "@cleantitans.com"
     //validate form \
-    if (!email || !password || !first_name || !nickname ||password != verify) {
-      console.log(email + " " + password + " " + verify + " " + first_name + " " + last_name);
+    if (!email || !password || !first_name || !nickname || password != verify) {
+      console.log(email + " " + password + " " + verify + " " + first_name + " " + nickname);
       return}
     console.log("clicked");
 
     //create firebase account
-    addUser(email, password, nickname, first_name, parentID);
+    addUser(email, password, nickname, first_name, parentId);
     }
     //add user to firebase
-    function addUser(email, password, nickname, last_name, parentID) {
+    function addUser(email, password, nickname, first_name, parentId) {
       firebase.auth().createUserWithEmailAndPassword(email, password)
         .catch(function (error) {
           console.log(error)
@@ -61,22 +61,29 @@ $(document).ready(function () {
           }
       }).then(function (user) {
         uid = user.uid;
-        addChild({first_name, avatar, nickname, uid, parentID})
+        addChild({first_name, nickname, uid, parentId})
       })
     }
     //add child to db
     function addChild(childData) {
+      console.log(childData);
       $.post("/api/children", childData)
       .then(function (newChild) {
-        var childID = newChild.id
-        addMissions(childID, parentID)
+        childId = newChild.id
+        $.get("/api/children/missions")
+        .then(function (missionTableData) {
+          var missionList = missionTableData;
+          addMissions(childId, parentId, missionList)
+        })
       })
     }
     //add missions for childDat
-    function addMissions(childID, parentID) {
-      $.get("/api/children/missions")
-      .then(function (missionList) {
-        console.log(missionList)
-      })
+
+    function addMissions(childId, parentId, missionList) {
+      var newMissions = [];
+      for(var i = 0; i > missionslist.length; i++) {
+        var missionData = missionList[i];
+        console.log(missionData);
+      }
     }
 })
