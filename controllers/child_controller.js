@@ -77,7 +77,7 @@ router.get("/child-rewards", function (req, res) {
     };
 
     var hero = {
-        "nickname": children.nickname
+        "nickname": "Sylar"
     };
 
     res.render('child', {layout: 'child_layout', childRewardsPage: true, rewards: rewards_available, child: hero});
