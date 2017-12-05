@@ -78,6 +78,7 @@ $(document).ready(function() {
 
  //function for child login
  function childLogin() {
+   event.stopPropogation();
    event.preventDefault();
    var userDiv  = $('#child_user_name')
    var passDiv = $('#child_password')
