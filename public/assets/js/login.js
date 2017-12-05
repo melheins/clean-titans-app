@@ -37,7 +37,7 @@ $(document).ready(function() {
     //create firebase account
     addUser(email, password);
     addParent({first_name, last_name, uid});
-    loadParentPage(uid)
+    location.replace(window.location.host + "/parents/" + uid)
   }
 
   //function for creting parent
@@ -73,7 +73,7 @@ $(document).ready(function() {
 
    if (!email || !password ) return
    firebaseLogIn(email, password, userDiv, passDiv);
-   loadParentPage(uid)
+   location.replace(window.location.host + "/parents/" + uid)
  }
 
  //function for child login
@@ -108,17 +108,9 @@ $(document).ready(function() {
       //successfull login
       } else {
         uid = user.uid;
-        getData("parents", uid)
       }
 
     });
   }
-  //function for proceeding to parent page
-  function loadParentPage(uid){
-    $.get("/api/parents/" + uid)
-    .then(function (parentData) {
-      console.log(parentData)
-      $.get("/parent", parentData)
-    })
-  }
+
 })

@@ -23,11 +23,7 @@ module.exports = function (sequelize, DataTypes) {
         rewards.hasMany(models.active_rewards, {
             onDelete: "cascade"
         });
-        rewards.belongsTo(models.children, {
-            foreignKey: {
-                allowNull: false
-            }
-        })
+    
     };
     return rewards
 };
