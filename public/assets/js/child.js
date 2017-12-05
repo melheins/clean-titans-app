@@ -18,16 +18,9 @@ $(document).ready(function () {
         if (user) uid = user.uid
     })
     //set up listeners
-    $(document).on("click", "#mission_accomplished", accomplishMission);
+    $(document).on("click", "#mission_accomplished", changeStatusMission);
     $(document).on("click", "#reward_claim_btn", claimReward);
-  
-    function accomplishMission() {
-        active_missions.destroy({
-            where: {
-                mission_status: "C"
-            }
-        })
-    };
+
 
     function claimReward() {
         rewards.destroy({
@@ -36,14 +29,31 @@ $(document).ready(function () {
             }
         })
     };
+
+    function accomplishMission() {
+        active_missions.destroy({
+            where: {
+                mission_status: "C"
+            }
+        });
+    };
     
     function changeStatusMission () {
         active_missions.update({
             where: {
                 mission_status: "I"
             }
-        })
-    }
+        }).on('success', function (status) {
+            if (status) {
+                active_missions.updateAttributes({
+                    mission_status: "C"
+                })
+            }
+        });
+
+        accomplishMission();
+    };
+
 
 // doc ready closing
 });
