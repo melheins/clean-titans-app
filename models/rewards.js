@@ -23,7 +23,7 @@ module.exports = function (sequelize, DataTypes) {
         rewards.hasMany(models.active_rewards, {
             onDelete: "cascade"
         });
-    
+
     };
     return rewards
 };

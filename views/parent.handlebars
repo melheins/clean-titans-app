@@ -27,7 +27,7 @@
                     {{/each}}
                     <li class="collection-header"><a class="" href="/parent-team">View Team Details</a>
                         <a class="btn-add-mission btn-floating fab waves-effect waves-light red"
-                           href="/parent-add-child"><i
+                           href="/parent-add-child/{{pid}}"><i
                                 class="material-icons">add</i></a></li>
                 </ul>
             </div>
@@ -41,7 +41,7 @@
                     {{/each}}
                     <li class="collection-header"><a class="" href="/parent-rewards">View All</a>
                         <a class="disabled btn-add-reward btn-floating fab waves-effect waves-light red"
-                           href="/parent-add-rewards"><i
+                           href="/parent-add-rewards/{{pid}}"><i
                                 class="material-icons">add</i></a></li>
                 </ul>
             </div>
@@ -56,7 +56,7 @@
                     {{/each}}
                     <li class="collection-header"><a class="" href="/parent-missions">View All</a>
                         <a class="disabled btn-add-mission btn-floating fab waves-effect waves-light red"
-                           href="/parent-add-missions"><i
+                           href="/parent-add-missions/{{pid}}"><i
                                 class="material-icons">add</i></a></li>
                 </ul>
             </div>
@@ -99,8 +99,12 @@
             <form class="col s12">
                 <div class="row">
                     <div class="input-field col s6">
-                        <input id="last_name" type="text" class="validate">
-                        <label for="last_name">First Name</label>
+                        <input id="first_name" type="text" class="validate">
+                        <label for="first_name">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="create_nickname" type="text" class="validate">
+                        <label for="create_nickname">nickname</label>
                     </div>
                 </div>
 
@@ -112,11 +116,11 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="email" type="email" class="validate">
-                        <label for="email">Email</label>
+                        <input id="password_verify" type="password" class="validate">
+                        <label for="password_verify">Verify Password</label>
                     </div>
                 </div>
-                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <button class="btn waves-effect waves-light" type="submit" name="action" id="create_child">Submit
                     <i class="material-icons right">send</i>
                 </button>
             </form>
