@@ -56,6 +56,7 @@ router.get("/parent-team/:id", function (req, res) {
           var missions = parentData.active_missions;
           var rewardsAppr = [];
           var missionsAppr = [];
+          var name = parentData.children.first_name;
 
           //if no missions, set to false
           if (missionsAppr.length === 0) missionsAppr = false;
@@ -73,7 +74,7 @@ router.get("/parent-team/:id", function (req, res) {
             };
           }
 
-      res.render('parent', {layout: 'parent_layout', parentFamilyPage:true, child: children, reward_approval: rewardsAppr, mission_approval: missionsAppr, pid:id});
+      res.render('parent', {layout: 'parent_layout', parentFamilyPage:true, child: children, reward_approval: rewardsAppr, mission_approval: missionsAppr, pid:id, name: name});
     })
 
 });

@@ -72,10 +72,10 @@
                 <div class="team-summary">
                     <div class="card">
                         <div class="card-header">
-                        <span class="card-title">
+                        <div class="card-title">
                             {{name}}<br>
                                 ({{nickname}})
-                        </span>
+                        </div>
                         </div>
                         <div class="card-content">
                             <img class='avatar-sm' src="{{avatar}}">
@@ -139,7 +139,6 @@
                         {{#each rewards}}
                             <a href="#!" class="collection-item">
                                 <h3 class="center-align black-text">{{reward_id}}</h3>
-                                <h5 class="center-align black-text">Cost: {{reward_points_required}} Points</h5>
                             </a>
                             <a class="btn btn-large waves-effect waves-light red accent-4" id="reward_issued" value={{reward_id}}><p>Remove Issued Reward</p></a>
                         {{/each}}
