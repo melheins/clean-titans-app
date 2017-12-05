@@ -12,7 +12,6 @@ router.get("/api/parents/:uid", function (req, res) {
     res.json(parentData)
   })
 });
-
 router.post("/api/parents", function (req, res) {
   db.parents.create(req.body)
   .then(function (parentData) {
