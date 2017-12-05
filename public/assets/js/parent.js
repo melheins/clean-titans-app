@@ -71,8 +71,7 @@ $(document).ready(function () {
       .then(function (newChild) {
         childId = newChild.id
         $.get("/api/children/missions")
-        .then(function (missionTableData) {
-          var missionList = missionTableData;
+        .then(function (missionList) {
           addMissions(childId, parentId, missionList)
         })
       })
@@ -81,9 +80,23 @@ $(document).ready(function () {
 
     function addMissions(childId, parentId, missionList) {
       var newMissions = [];
-      for(var i = 0; i > missionslist.length; i++) {
+      console.log(missionList.length);
+      for(var i = 0; i < missionList.length; i++) {
         var missionData = missionList[i];
-        console.log(missionData);
+        var missionId = missionData.id;
+        var newMission = {
+          mission_title: missionData.mission_title,
+          mission_point_value: missionData.mission_point_value,
+          mission_description: missionData.mission_description,
+          mission_video_url: missionData.mission_video_url,
+          parentId,
+          childId,
+          missionId: missionData.id
+        };
+        $.post("/api/children/missions", newMission)
+        .then(function () {
+          $.get("/parent/" + parentId)
+        })
       }
     }
 })
