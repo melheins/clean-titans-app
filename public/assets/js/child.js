@@ -22,12 +22,28 @@ $(document).ready(function () {
     $(document).on("click", "#reward_claim_btn", claimReward);
   
     function accomplishMission() {
-
+        active_missions.destroy({
+            where: {
+                mission_status: "C"
+            }
+        })
     };
 
     function claimReward() {
-
+        rewards.destroy({
+            where: {
+                reward_status: "C"
+            }
+        })
     };
+    
+    function changeStatusMission () {
+        active_missions.update({
+            where: {
+                mission_status: "I"
+            }
+        })
+    }
 
 // doc ready closing
 });

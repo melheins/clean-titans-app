@@ -67,7 +67,7 @@ $(document).ready(function() {
    })
 
  }
- //function for creting parent
+ //function for creating parent
 function addParent(parentData) {
   console.log(parentData)
   $.post("/api/parents", parentData)
