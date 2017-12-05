@@ -11,4 +11,4 @@ router.get("/api/parents", function (req, res) {
   }).then(function (dbParent) {
     return dbParent
   })
-})
+});

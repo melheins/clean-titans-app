@@ -1,11 +1,19 @@
 var express = require("express");
-var db = require("../models");
 var router = express.Router();
 
 // Import the model (.js) to use its database functions.
-//var burger = require("../models/index.js");
+var db = require("../models");
 
 // Create all our routes and set up logic within those routes where required.
+
+
+router.get("/test", function (req, res) {
+    db.Missions.findAll({
+
+    }).then(function (dbMissions) {
+        return dbMissions
+    })
+});
 
 router.get("/parent/:uid", function (req, res) {
 
