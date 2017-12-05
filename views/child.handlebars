@@ -57,7 +57,7 @@
                                 <h3 class="center-align black-text">{{mission_title}}</h3>
                                 <h5 class="center-align black-text">Worth: {{mission_point_value}} Points</h5>
                                 <p class="black-text">{{mission_description}}</p>
-                                <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+                                <a class="btn btn-large waves-effect waves-light red accent-4" id="mission_accomplished"><p>Mission Accomplished!</p></a>
                             </a>
                         {{/each}}
                     </div>
@@ -79,6 +79,7 @@
                                 <h3 class="center-align black-text">{{reward_id}}</h3>
                                 <h5 class="center-align black-text">Cost: {{reward_points_required}} Points</h5>
                             </a>
+                            <a class="btn btn-large waves-effect waves-light red accent-4" id="reward_claim_btn"><p>Claim This Prize!</p></a>
                         {{/each}}
                     </div>
                 </div>

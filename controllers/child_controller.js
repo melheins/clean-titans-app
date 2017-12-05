@@ -95,5 +95,6 @@ router.get('/child-comics', function (req, res) {
     res.render('child', {layout: 'child_layout', childsComicsPage: true, child: hero, comics: comics_earned});
 });
 
+
 // Export routes for server.js to use.
 module.exports = router;
