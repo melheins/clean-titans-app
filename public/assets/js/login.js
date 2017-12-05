@@ -37,7 +37,7 @@ $(document).ready(function() {
     //create firebase account
     addUser(email, password);
     addParent({first_name, last_name, uid});
-    loadPage("parents", uid)
+    loadParentPage(uid)
   }
 
   //function for creting parent
@@ -60,9 +60,7 @@ $(document).ready(function() {
        } else if (errorCode){
            console.log(errorCode)
        } else uid = user.uid
-       console.log(uid)
    })
-   getData("parents", uid)
  }
  //function for parent login
  function parentLogin() {
@@ -75,7 +73,7 @@ $(document).ready(function() {
 
    if (!email || !password ) return
    firebaseLogIn(email, password, userDiv, passDiv);
-   getData("parents", uid)
+   loadParentPage(uid)
  }
 
  //function for child login

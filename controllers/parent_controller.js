@@ -12,8 +12,8 @@ router.get("/parent", function (req, res) {
     var children = [req.body.children];
     var rewards = [req.body.active_rewards];
     var missions = [req.body.active_missions];
-    var rewardsAppr;
-    var missionsAppr [];
+    var rewardsAppr = [];
+    var missionsAppr = [];
     //check for missions that need approval
     for (var i = 0; i > missions.length; i++) {
       if (missions[i].mission_status === "W") missionsAppr.push(missions[i])
