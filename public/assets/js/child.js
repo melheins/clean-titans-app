@@ -18,15 +18,11 @@ $(document).ready(function () {
         if (user) uid = user.uid
     })
     //set up listeners
-    
-    function removeMission() {
-
+    $(document).on("click", "#mission_accomplished", accomplishMission);
+  
+    function accomplishMission() {
         
     }
-    
-    $("#mission_accomplished").on('click', function () {
-        removeMission();
-    })
 
 // doc ready closing
 });
