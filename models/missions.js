@@ -9,7 +9,7 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        mission_decription: {
+        mission_description: {
             type: DataTypes.TEXT,
             allowNull: false
         },
