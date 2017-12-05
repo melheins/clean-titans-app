@@ -22,37 +22,7 @@ $(document).ready(function () {
     $(document).on("click", "#reward_claim_btn", claimReward);
 
 
-    function claimReward() {
-        rewards.destroy({
-            where: {
-                reward_status: "C"
-            }
-        })
-    };
-
-    function accomplishMission() {
-        active_missions.destroy({
-            where: {
-                mission_status: "C"
-            }
-        });
-    };
-    
-    function changeStatusMission () {
-        active_missions.update({
-            where: {
-                mission_status: "I"
-            }
-        }).on('success', function (status) {
-            if (status) {
-                active_missions.updateAttributes({
-                    mission_status: "C"
-                })
-            }
-        });
-
-        accomplishMission();
-    };
+  
 
 
 // doc ready closing

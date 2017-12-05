@@ -86,24 +86,23 @@ function addParent(parentData) {
    var email = userDiv.val().trim();
    var password = passDiv.val().trim()
    if (!email || !password ) return
-   firebaseLogIn(email, password, userDiv, passDiv);
+   firebaseLogIn(email, password, userDiv, passDiv, "parent");
  }
 
  //function for child login
  function childLogin() {
-   event.stopPropogation();
    event.preventDefault();
    var userDiv  = $('#child_user_name')
    var passDiv = $('#child_password')
    var userName = userDiv.val().trim();
-   var email = user + "@cleantitans.com";
+   var email = userName + "@cleantitans.com";
    var password = passDiv.val().trim()
    if (!email || !password) return
-   firebaseLogIn(email, password, userDiv, passDiv)
+   firebaseLogIn(email, password, userDiv, passDiv, "child")
  }
 
  //function for firebase login
- firebaseLogIn = function (email, password, userDiv, passDiv) {
+ firebaseLogIn = function (email, password, userDiv, passDiv, type) {
    firebase.auth().signInWithEmailAndPassword(email, password)
    .catch(function (error, user) {
      //Handle Errors
@@ -123,6 +122,12 @@ function addParent(parentData) {
         uid = user.uid;
       }
 
+    }).then(function (uid, type) {
+      $.get("/api/" + type = "/" + uid)
+      .then(function (id) {
+        var url = "/" + type + "/" + id
+        console.log(url);
+      })
     });
   }
 
