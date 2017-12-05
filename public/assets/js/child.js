@@ -19,10 +19,15 @@ $(document).ready(function () {
     })
     //set up listeners
     $(document).on("click", "#mission_accomplished", accomplishMission);
+    $(document).on("click", "#reward_claim_btn", claimReward);
   
     function accomplishMission() {
-        
-    }
+
+    };
+
+    function claimReward() {
+
+    };
 
 // doc ready closing
 });
