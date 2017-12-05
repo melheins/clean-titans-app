@@ -7,13 +7,15 @@ var router = express.Router();
 
 // Create all our routes and set up logic within those routes where required.
 
-router.get("/parent", function (req, res) {
-    //parese data from request
-    var children = [req.body.children];
-    var rewards = [req.body.active_rewards];
-    var missions = [req.body.active_missions];
-    var rewardsAppr;
-    var missionsAppr [];
+router.get("/parent/:uid", function (req, res) {
+  var uid = req.params.uid
+  $.get("/api/parents/" + uid)
+  .then(function (parentData) {
+    var children = [parentData.children];
+    var rewards = [parentData.active_rewards];
+    var missions = [parentData.active_missions];
+    var rewardsAppr = [];
+    var missionsAppr = [];
     //check for missions that need approval
     for (var i = 0; i > missions.length; i++) {
       if (missions[i].mission_status === "W") missionsAppr.push(missions[i])
@@ -26,9 +28,8 @@ router.get("/parent", function (req, res) {
     };
 
     if (rewardsAppr.length === 0) rewardsAppr = false;
-
-req.body.
     res.render('parent', {layout: 'parent_layout',parentSummaryPage:true, child: children, reward_approval: rewardsAppr, mission_approval: missionsAppr, mission:missions, reward:rewards});
+  })
 });
 
 
