@@ -130,10 +130,46 @@
 
 {{#if parentRewardsPage}}
     <h1>Rewards</h1>
+    <div class="row">
+        <div class="col s12 m8 offset-m2">
+            <ul class="collection with-header white">
+                <li class="collection-header red accent-4"><h4 class="center-align">Rewards Earned</h4></li>
+                <div class="row">
+                    <div class="col s8 offset-s2">
+                        {{#each rewards}}
+                            <a href="#!" class="collection-item">
+                                <h3 class="center-align black-text">{{reward_id}}</h3>
+                                <h5 class="center-align black-text">Cost: {{reward_points_required}} Points</h5>
+                            </a>
+                            <a class="btn btn-large waves-effect waves-light red accent-4" id="reward_issued" value={{reward_id}}><p>Remove Issued Reward</p></a>
+                        {{/each}}
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </div>
 {{/if}}
 
 {{#if parentMissionsPage}}
     <h1>Missions</h1>
+    <div class="row">
+        <div class="col s12 m8 offset-m2">
+            <ul class="collection with-header white">
+                <li class="collection-header red accent-4"><h4 class="center-align">Missions Completed</h4></li>
+                <div class="row">
+                    <div class="col s8 offset-s2">
+                        {{#each missions_assigned}}
+                            <a href="#!" class="collection-item">
+                                <h3 class="center-align black-text">{{mission_title}}</h3>
+                                <h5 class="center-align black-text">Worth: {{mission_point_value}} Points</h5>
+                                <a class="btn btn-large waves-effect waves-light red accent-4" id="mission_approved" value={{mission_id}}><p>Confirm Mission</p></a>
+                            </a>
+                        {{/each}}
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </div>
 {{/if}}
 
 {{#if parentEditChildPage}}
