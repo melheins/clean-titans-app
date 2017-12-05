@@ -7,7 +7,7 @@ router.get("/api/parents/:uid", function (req, res) {
     where: {
       uid: req.params.uid
     },
-    include: [db.children]
+    include: [db.children, db.active_rewards, db.active_missions]
   }).then(function (parentData) {
     res.json(parentData)
   })
