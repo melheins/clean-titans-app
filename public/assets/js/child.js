@@ -29,6 +29,14 @@ $(document).ready(function () {
             }
         })
     };
+
+    function accomplishMission() {
+        active_missions.destroy({
+            where: {
+                mission_status: "C"
+            }
+        });
+    };
     
     function changeStatusMission () {
         active_missions.update({
@@ -46,13 +54,6 @@ $(document).ready(function () {
         accomplishMission();
     };
 
-    function accomplishMission() {
-        active_missions.destroy({
-            where: {
-                mission_status: "C"
-            }
-        });
-    };
 
 // doc ready closing
 });

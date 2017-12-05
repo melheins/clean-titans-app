@@ -1,10 +1,10 @@
 --#Schema#
 
-DROP DATABASE IF EXISTS x1vm9o4shp876fga;
+DROP DATABASE IF EXISTS kdckzsn2npotdym2;
 
-CREATE DATABASE x1vm9o4shp876fga;
+CREATE DATABASE kdckzsn2npotdym2;
 
-USE x1vm9o4shp876fga;
+USE kdckzsn2npotdym2;
 
 --##Parent Table##
 CREATE TABLE parents (
@@ -38,6 +38,7 @@ CREATE TABLE mission (
 CREATE TABLE child_mission_list (
   seq_no              INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   child_id            INT,
+  mission_id          VARCHAR(30),
   mission_status      VARCHAR(1)   DEFAULT 'I',
   mission_status_date TIMESTAMP DEFAULT NOW(),
   FOREIGN KEY (child_id) REFERENCES children (child_id),
