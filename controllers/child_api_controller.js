@@ -19,10 +19,12 @@ router.get("/api/children/missions", function (req, res) {
 router.get("/api/children/get/:uid", function (req, res) {
   db.children.findOne({
     where: {
-      uid: req.params.id
-    }
-  }).then(function (id) {
-    res.json(parentId.id)
+      uid: req.params.uid
+    },
+      include: [db.active_missions, db.active_rewards]
+
+  }).then(function (child) {
+    res.json(child)
   })
 })
 
