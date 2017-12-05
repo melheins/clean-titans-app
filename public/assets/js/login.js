@@ -98,42 +98,74 @@ function addParent(parentData) {
    var email = userName + "@cleantitans.com";
    var password = passDiv.val().trim()
    if (!email || !password) return
-   firebaseLogIn(email, password, userDiv, passDiv)
-   .then(function () {
-       var url = "/api/children/get/" + uid
-       $.get(url)
-       .then(function (id) {
-         console,log(id)
-         var url = "/children/" + id
-         console.log(url);
-       })
-     });
-   })
- }
+   childLogIn(email, password)
+   }
 
- //function for firebase login
- firebaseLogIn = function (email, password, userDiv, passDiv, aaccountType) {
-   var type = aaccountType
+ //function for child login
+ childLogIn = function (email, password) {
    firebase.auth().signInWithEmailAndPassword(email, password)
-   .catch(function (error, user, passDiv, userDiv, ) {
+   .catch(function (error, user) {
      //Handle Errors
       if(error) {
         errorCode = error.code;
         errorMessage = error.message;
         if (errorCode === 'auth/wrong-password') {
-          passDiv.after('<p>' + errorMessage + '</p>');
+          $('#child_password').after('<p>' + errorMessage + '</p>');
         } else if (errorCode === 'auth/invalid-email' || errorCode === 'auth/user-not-found') {
           alert(errorMessage);
-          userDiv.after('<p>' + errorMessage + '</p>');
+          $('#child_user_name').after('<p>' + "Not Found" + '</p>');
         } else {
           console.log(errorCode)
         }
       //successfull login
       } else {
         uid = user.uid;
+        console.log(user);
+        console.log(uid);
       }
 
-    }).
+    }) .then(function () {
+        console.log(uid)
+         var url = "/api/children/get/" + uid
+         console.log(url)
+         $.get(url)
+         .then(function (child) {
+           window.location = "/children/" + child.id;
+         })
+       });
   }
+  //function for parent login
+  firebaseLogIn = function (email, password) {
+    firebase.auth().signInWithEmailAndPassword(email, password)
+    .catch(function (error, user) {
+      //Handle Errors
+       if(error) {
+         errorCode = error.code;
+         errorMessage = error.message;
+         if (errorCode === 'auth/wrong-password') {
+           passDiv.after('<p>' + errorMessage + '</p>');
+         } else if (errorCode === 'auth/invalid-email' || errorCode === 'auth/user-not-found') {
+           alert(errorMessage);
+           userDiv.after('<p>' + errorMessage + '</p>');
+         } else {
+           console.log(errorCode)
+         }
+       //successfull login
+       } else {
+         uid = user.uid;
+         console.log(user);
+         console.log(uid);
+       }
+
+     }) .then(function (uid, path) {
+          var url = path + uid
+          console.log(url)
+          $.get(url)
+          .then(function (response) {
+            console.log(response);
+          })
+
+        });
+   }
 
 })

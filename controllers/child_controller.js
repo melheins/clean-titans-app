@@ -6,8 +6,8 @@ var router = express.Router();
 
 // Create all our routes and set up logic within those routes where required.
 
-router.get("/child", function (req, res) {
-
+router.get("/children/:id", function (req, res) {
+    /*console.log(req.params.id)
     var missions_assigned = [
         {
             "mission_title": "sample1"
@@ -26,14 +26,14 @@ router.get("/child", function (req, res) {
 
     var hero = {
         "nickname": "sylar"
-    };
+    };*/
 
-    res.render('child', {
+    return res.render('child', {
         layout: 'child_layout',
         childSummaryPage: true,
-        missions_assigned: missions_assigned,
-        rewards_earned: rewards_earned,
-        child: hero
+        missions_assigned: [], //
+        rewards_earned: [], //rewards_earned,
+        child: {nickname: "syler"}
     });
 });
 
