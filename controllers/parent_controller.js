@@ -6,7 +6,6 @@ var db = require("../models");
 
 // Create all our routes and set up logic within those routes where required.
 
-
 router.get("/test", function (req, res) {
     db.Missions.findAll({
 
@@ -15,45 +14,39 @@ router.get("/test", function (req, res) {
     })
 });
 
+// Create all our routes and set up logic within those routes where required.
+
+router.get("/parent", function (req, res) {
+    //parese data from request
+    var children = [req.body.children];
+    var rewards = [req.body.active_rewards];
+    var missions = [req.body.active_missions];
+  
+  });
+
 router.get("/parent/:uid", function (req, res) {
+  var uid = req.params.uid
+  $.get("/api/parents/" + uid)
+  .then(function (parentData) {
+    var children = [parentData.children];
+    var rewards = [parentData.active_rewards];
+    var missions = [parentData.active_missions];
+    var rewardsAppr = [];
+    var missionsAppr = [];
+    //check for missions that need approval
+    for (var i = 0; i > missions.length; i++) {
+      if (missions[i].mission_status === "W") missionsAppr.push(missions[i])
+    };
+    //if no missions, set to false
+    if (missionsAppr.length === 0) missionsAppr = false;
 
-    var children = [
-        {
-            "name": "test01",
-            "nickname": "Bobbie",
-            "avatar": "assets/images/childavatars/batman.jpg"
-        },
-        {
-            "name": "test02",
-            "nickname": "Johnny",
-            "avatar": "assets/images/childavatars/spiderman.jpg"
-        }];
+    for (var j = 0; j > missions.length; j++) {
+      if (rewards[j].reward_status === "W") rewardsAppr.push(rewards[j])
+    };
 
-    var rewards = [
-        {
-            "title": "Cookie",
-            "points": "5"
-        },
-        {
-            "title": "Ice Cream",
-            "points": "5"
-        }];
-
-    var missions = [
-        {
-            "title": "Brush Teeth",
-            "points": "5"
-        },
-        {
-            "title": "Make Bed",
-            "points": "5"
-        }];
-
-    var rewardsAppr;
-
-    var missionsAppr;
-
+    if (rewardsAppr.length === 0) rewardsAppr = false;
     res.render('parent', {layout: 'parent_layout',parentSummaryPage:true, child: children, reward_approval: rewardsAppr, mission_approval: missionsAppr, mission:missions, reward:rewards});
+  })
 });
 
 

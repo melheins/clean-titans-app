@@ -19,7 +19,7 @@ $(document).ready(function() {
    })
 
    //Set up listeners
-  $(document).on("click", "#create-account", createParent);
+  $(document).on("click", "#create_account", createParent);
   $(document).on("click", "#parent_log_in", parentLogin);
   $(document).on("click", "#child_log_in", childLogin);
 
@@ -27,20 +27,25 @@ $(document).ready(function() {
   function createParent() {
     event.preventDefault();
     //get values
-    var email = $("#create-email").val();
-    var password = $("#create-password").val();
+    var email = $("#create_email").val();
+    var password = $("#create_password").val();
+    var verify = $("#password_verify").val().trim();
     var first_name = $("#create_first_name").val();
     var last_name = $("#create_last_name").val();
     //validate form \
-    if (!email || !password || !first_name || !last_name) return
+    if (!email || !password || !first_name || !last_name || password != verify) return
     //create firebase account
-    addUser(email, password)
-    .then(addParent({first_name, last_name, uid};
+    addUser(email, password);
+    addParent({first_name, last_name, uid});
+    loadParentPage(uid)
   }
 
   //function for creting parent
  function addParent(parentData) {
    $.post("/api/parents", parentData)
+   .then(function (parentData) {
+     console.log(parentData)
+   })
  }
 
  //add user to firebase
@@ -55,9 +60,8 @@ $(document).ready(function() {
        } else if (errorCode){
            console.log(errorCode)
        } else uid = user.uid
-     }
+   })
  }
-
  //function for parent login
  function parentLogin() {
    event.preventDefault();
@@ -65,13 +69,16 @@ $(document).ready(function() {
    var passDiv = $('#parent_password')
    var email = userDiv.val().trim();
    var password = passDiv.val().trim()
-   if (!email || !password) return
-   firebaseLogIn(email, password, userDiv, passDiv)
-  }
+
+
+   if (!email || !password ) return
+   firebaseLogIn(email, password, userDiv, passDiv);
+   loadParentPage(uid)
  }
 
  //function for child login
  function childLogin() {
+   event.stopPropogation();
    event.preventDefault();
    var userDiv  = $('#child_user_name')
    var passDiv = $('#child_password')
@@ -80,7 +87,6 @@ $(document).ready(function() {
    var password = passDiv.val().trim()
    if (!email || !password) return
    firebaseLogIn(email, password, userDiv, passDiv)
-  }
  }
 
  //function for firebase login
@@ -99,8 +105,20 @@ $(document).ready(function() {
         } else {
           console.log(errorCode)
         }
-      }
       //successfull login
-    } else uid = user.uid
- }
+      } else {
+        uid = user.uid;
+        getData("parents", uid)
+      }
+
+    });
+  }
+  //function for proceeding to parent page
+  function loadParentPage(uid){
+    $.get("/api/parents/" + uid)
+    .then(function (parentData) {
+      console.log(parentData)
+      $.get("/parent", parentData)
+    })
+  }
 })

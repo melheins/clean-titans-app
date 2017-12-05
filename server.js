@@ -34,16 +34,19 @@ app.set("view engine", "handlebars");
 
 // Routes
 // =============================================================
-//var routes = require("./controllers/test_controller.js");
-//app.use("/", routes);
+// var routes = require("./controllers/test_controller.js");
+// app.use("/", routes);
+
 
 var route1 = require("./controllers/login_controller.js");
 var route2 = require("./controllers/parent_controller.js");
 var route3 = require("./controllers/child_controller.js");
+var route4 = require("./controllers/parent_api_controller.js");
 
 app.use("/", route1);
 app.use("/", route2);
 app.use("/", route3);
+app.use("/", route4);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================

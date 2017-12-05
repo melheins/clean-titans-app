@@ -72,6 +72,11 @@ nav {
     height: 115px;
 }
 
+#mission_accomplished,
+#reward_claim_btn {
+    width: 100%;
+}
+
 /** Hide notification sections unless needed **/
 .mission-approval-list, .reward-approval-list {
     display: none;

@@ -8,21 +8,10 @@
 
             <div class="row">
                 <div class="col s6 center-align">
-                    <a class="waves-effect waves-red btn-flat" href="/parent-login">Parent</a>
+                    <a class="waves-effect waves-red btn-flat" href="/parent-login" id="parent">Parent</a>
                 </div>
                 <div class="col s6 center-align">
-                    <a class="waves-effect waves-red btn-flat" href="/child-login">Child</a>
-                </div>
-            </div>
-
-
-
-            <div class="row">
-                <div class="col s6 center-align">
-                    <a class="waves-effect waves-red btn-flat" id="parent">Parent</a>
-                </div>
-                <div class="col s6 center-align">
-                    <a class="waves-effect waves-red btn-flat" id="child">Child</a>
+                    <a class="waves-effect waves-red btn-flat" href="/child-login" id="child">Child</a>
                 </div>
             </div>
         </div>
@@ -65,7 +54,7 @@
                 </div>
                 <div class="row">
                     <div class="col s4 center-align">
-                        <a class="waves-effect waves-red btn-flat" id="child">HEROES LOGIN</a>
+                        <a class="waves-effect waves-red btn-flat" id="child-login-btn"><i class="material-icons">forward</i>HEROES LOGIN</a>
                     </div>
                 </div>
             </div>
@@ -82,11 +71,11 @@
                 <form class="col s12">
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="email" type="parent_email" class="validate">
+                            <input id="parent_email" type="email" class="validate">
                             <label for="parent_email">Email</label>
                         </div>
                         <div class="input-field col s12">
-                            <input id="password" type="parent_password" class="validate">
+                            <input id="parent_password" type="password" class="validate">
                             <label for="parent_password">Password</label>
                         </div>
                     </div>
@@ -95,7 +84,7 @@
         </div>
     </div>
     <div class="modal-footer">
-        <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat" id="parent_log_">Log In</a>
+        <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat" id="parent_log_in">Log In</a>
     </div>
 </div>
 
@@ -121,7 +110,7 @@
         </div>
     </div>
     <div class="modal-footer">
-        <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat" id="child_log_in">Onward!</a>
+        <a href="#" class="modal-action modal-close waves-effect waves-red btn-flat" id="child_log_in">Onward!</a>
     </div>
 </div>
 
@@ -142,26 +131,26 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input placeholder="Email Address" id="create-email" type="email" class="validate">
-                    <label for="create-mail">Email</label>
+                    <input placeholder="Email Address" id="create_email" type="email" class="validate">
+                    <label for="create_email">Email</label>
 
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input placeholder="Choose Password" id="create-password" type="password" class="validate">
-                    <label for="password">Password</label>
+                    <input placeholder="Choose Password" id="create_password" type="password" class="validate">
+                    <label for="create_password">Password</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input placeholder="Repeat Password" id="passwordVerify" type="text" class="validate">
-                    <label for="passwordVerify">Repeat Password</label>
+                    <input placeholder="Repeat Password" id="password_verify" type="password" class="validate">
+                    <label for="password_verify">Repeat Password</label>
                 </div>
             </div>
         </div>
         <div class="modal-footer">
-            <a href="#" class="waves-effect waves-green btn-flat" id="create-account">Create!</a>
+            <a href="#" class="waves-effect waves-red btn-flat" id="create-account">Create!</a>
         </div>
     </div>
 </div>

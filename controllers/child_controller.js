@@ -1,4 +1,5 @@
 var express = require("express");
+var db = require("../models");
 var router = express.Router();
 
 // Import the model (.js) to use its database functions.
@@ -24,7 +25,7 @@ router.get("/child", function (req, res) {
         }];
 
     var hero = {
-        "nickname": "Sylar"
+        "nickname": children.nickname
     };
 
     res.render('child', {
@@ -40,7 +41,7 @@ router.get("/child", function (req, res) {
 router.get("/child-missions", function (req, res) {
 
     var hero = {
-        "nickname": "Sylar"
+        "nickname": children.nickname
     };
 
     var missions_assigned = [
@@ -94,6 +95,7 @@ router.get('/child-comics', function (req, res) {
 
     res.render('child', {layout: 'child_layout', childsComicsPage: true, child: hero, comics: comics_earned});
 });
+
 
 // Export routes for server.js to use.
 module.exports = router;

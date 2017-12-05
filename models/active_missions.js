@@ -1,5 +1,12 @@
 module.exports = function (sequelize, DataTypes) {
     const active_missions = sequelize.define("active_missions", {
+        mission_id: {
+          type: DataTypes.INTEGER,
+        },
+        mission_title: {
+          type: DataTypes.STRING,
+          allowNull: false,
+        },
         mission_status: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -11,6 +18,7 @@ module.exports = function (sequelize, DataTypes) {
             defaultValue: DataTypes.NOW
         }
     });
+
     active_missions.associate = function (models) {
         active_missions.belongsTo(models.missions, {
             foreignKey: {
@@ -22,7 +30,13 @@ module.exports = function (sequelize, DataTypes) {
                 allowNull: false
             }
         });
+        active_missions.belongsTo(models.parents, {
+          foreignKey: {
+            allowNull: false
+          }
+        })
 
     };
     return active_missions
+
 };
