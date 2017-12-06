@@ -37,7 +37,15 @@ router.get("/child/:id", function (req, res) {
     }).then(function (childData) {
         //console.log(childData);
 
-        var hero = childData.children;
+        var hero = {
+            nickname:childData.nickname,
+            first_name:childData.first_name,
+            avatar:childData.avatar,
+            points:childData.points
+        };
+
+        //console.log(hero);
+
         var missions_assigned = childData.active_missions;
         var rewards_earned = childData.active_rewards;
 
@@ -84,7 +92,12 @@ router.get("/child-missions/:id", function (req, res) {
     }).then(function (childData) {
         console.log(childData);
 
-        var hero = childData.children;
+        var hero = {
+            nickname:childData.nickname,
+            first_name:childData.first_name,
+            avatar:childData.avatar,
+            points:childData.points
+        };
         var missions_assigned = childData.active_missions;
 
         res.render('child', {
