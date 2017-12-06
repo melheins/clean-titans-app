@@ -42,6 +42,7 @@ $(document).ready(function () {
         var first_name = $("#create_first_name").val().trim();
         var nickname = $("#create_nickname").val().trim();
         var email = first_name + "@cleantitans.com";
+        var avatar = $("input[type='radio'][name='avatars']:checked").val();
         //validate form \
         if (!email || !password || !first_name || !nickname || password != verify) {
             console.log(email + " " + password + " " + verify + " " + first_name + " " + nickname);
@@ -50,11 +51,11 @@ $(document).ready(function () {
         console.log("clicked");
 
         //create firebase account
-        addUser(email, password, nickname, first_name, parentId);
+        addUser(email, password, nickname, first_name, parentId, avatar);
     }
 
     //add user to firebase
-    function addUser(email, password, nickname, first_name, parentId) {
+    function addUser(email, password, nickname, first_name, parentId, avatar) {
         firebase.auth().createUserWithEmailAndPassword(email, password)
             .catch(function (error) {
                 console.log(error);
@@ -71,7 +72,7 @@ $(document).ready(function () {
                 }
             }).then(function (user) {
             uid = user.uid;
-            addChild({first_name, nickname, uid, parentId})
+            addChild({first_name, nickname, uid, parentId,avatar})
         })
     }
 
