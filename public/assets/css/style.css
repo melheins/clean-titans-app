@@ -110,3 +110,11 @@ a,
 .collection-item {
     font-family: "Comic Geek", Helvetica, Arial, sans-serif;
 }
+
+
+.child-summary .fixed-action-btn {
+    position: inherit;
+}
+.child-summary .fixed-action-btn.toolbar ul {
+    top: auto;
+;}

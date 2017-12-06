@@ -30,7 +30,7 @@ $(document).ready(function () {
     function appendAndMove() {
         event.preventDefault();
         var url = $(this).attr("href") + "/" + parentId;
-        window.location = url
+        window.location = url;
     }
 
     //function to create child
@@ -72,7 +72,7 @@ $(document).ready(function () {
                 }
             }).then(function (user) {
             uid = user.uid;
-            addChild({first_name, nickname, uid, parentId,avatar})
+            addChild({first_name, nickname, uid, parentId, avatar})
         })
     }
 
@@ -108,7 +108,10 @@ $(document).ready(function () {
             };
             $.post("/api/children/missions", newMission)
                 .then(function () {
-                    $.get("/parent/redirect/" + parentId)
+                    console.log('redirect part 1, ' + parentId);
+                    var url = "/parent-team/" + parentId;
+                    window.location = url;
+                    // $.get("/parent/redirect/" + parentId)
                 })
         }
     }
