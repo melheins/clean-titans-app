@@ -7,7 +7,7 @@ var router = express.Router();
 // Create all our routes and set up logic within those routes where required.
 
 router.get("/child/:id", function (req, res) {
-    /*console.log(req.params.id)
+    console.log(req.params.id)
     var missions_assigned = [
         {
             "mission_title": "sample1"
@@ -26,7 +26,7 @@ router.get("/child/:id", function (req, res) {
 
     var hero = {
         "nickname": "sylar"
-    };*/
+    };
 
     res.render('child', {
         layout: 'child_layout',
