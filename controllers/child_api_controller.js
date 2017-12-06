@@ -26,13 +26,13 @@ router.get("/api/children/get/:uid", function (req, res) {
   }).then(function (child) {
     res.json(child)
   })
-})
+});
 
 router.post("/api/children/missions", function (req, res) {
   db.active_missions.create(req.body)
     .then(function (mission) {
       res.json(mission)
     })
-})
+});
 
 module.exports = router;
