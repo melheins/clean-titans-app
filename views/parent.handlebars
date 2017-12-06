@@ -37,7 +37,9 @@
                 <ul class="collection with-header">
                     <li class="collection-header red accent-4"><h4 class="center-align">Rewards</h4></li>
                     {{#each reward}}
-                        <a href="#!" class="collection-item">{{reward_name}} <br><b>{{reward_points_required}}pts</b></a>
+                        <a href="#!" class="collection-item">{{reward_name}} <span
+                                class="right"><b>{{reward_points_required}}
+                            pts</b></span></a>
                     {{/each}}
                     <li class="collection-header"><a class="" href="/parent-rewards/{{pid}}">View All</a>
                         <a class="disabled btn-add-reward btn-floating fab waves-effect waves-light red"
@@ -52,7 +54,8 @@
                 <ul class="collection with-header">
                     <li class="collection-header red accent-4"><h4 class="center-align">Mission</h4></li>
                     {{#each mission}}
-                        <a href="#!" class="collection-item">{{mission_title}} <br><b>{{mission_point_value}}pts</b></a>
+                        <a href="#!" class="collection-item">{{mission_title}} <span
+                                class="right"><b>{{mission_point_value}}pts</b></span></a>
                     {{/each}}
                     <li class="collection-header"><a class="" href="/parent-missions">View All</a>
                         <a class="disabled btn-add-mission btn-floating fab waves-effect waves-light red"
@@ -73,7 +76,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="card-title">
-                                {{name}}<br>
+                                {{first_name}}<br>
                                 ({{nickname}})
                             </div>
                         </div>
@@ -131,20 +134,37 @@
 {{#if parentRewardsPage}}
     <h1>Rewards</h1>
     <div class="row">
-        <div class="col s12 m8 offset-m2">
+        <div class="col s12">
             <ul class="collection with-header white">
                 <li class="collection-header red accent-4"><h4 class="center-align">Rewards Earned</h4></li>
                 <div class="row">
-                    <div class="col s8 offset-s2">
+                    <div class="col s12">
                         {{#each rewards}}
                             <a href="#!" class="collection-item">
                                 <h3 class="center-align black-text">{{reward_id}}</h3>
                             </a>
-                            <a class="btn btn-large waves-effect waves-light red accent-4" id="reward_issued" value={{reward_id}}><p>Remove Issued Reward</p></a>
+                            <a class="btn btn-large waves-effect waves-light red accent-4" id="reward_issued"
+                               value={{reward_id}}><p>Remove Issued Reward</p></a>
                         {{/each}}
                     </div>
                 </div>
             </ul>
+        </div>
+        <div class="col s12">
+            <div class="rewards-summary">
+                <ul class="collection with-header">
+                    <li class="collection-header red accent-4"><h4 class="center-align">Rewards</h4></li>
+                    {{#each reward}}
+                        <a href="#!" class="collection-item">{{reward_name}} <span
+                                class="right"><b>{{reward_points_required}}
+                            pts</b></span></a>
+                    {{/each}}
+                    <li class="collection-header"><a
+                            class="disabled btn-add-reward btn-floating fab waves-effect waves-light red"
+                            href="/parent-add-rewards/{{pid}}"><i
+                            class="material-icons">add</i></a></li>
+                </ul>
+            </div>
         </div>
     </div>
 {{/if}}
@@ -152,23 +172,42 @@
 {{#if parentMissionsPage}}
     <h1>Missions</h1>
     <div class="row">
-        <div class="col s12 m8 offset-m2">
+        <div class="col s12">
             <ul class="collection with-header white">
-                <li class="collection-header red accent-4"><h4 class="center-align">Missions Completed</h4></li>
+                <li class="collection-header red accent-4"><h4 class="center-align">Missions For Approval</h4></li>
                 <div class="row">
-                    <div class="col s8 offset-s2">
+                    <div class="col s12">
                         {{#each missions_assigned}}
                             <a href="#!" class="collection-item">
                                 <h3 class="center-align black-text">{{mission_title}}</h3>
                                 <h5 class="center-align black-text">Worth: {{mission_point_value}} Points</h5>
-                                <a class="btn btn-large waves-effect waves-light red accent-4" id="mission_approved" value={{mission_id}}><p>Confirm Mission</p></a>
+                                <a class="btn btn-large waves-effect waves-light red accent-4" id="mission_approved"
+                                   value={{mission_id}}><p>Confirm Mission</p></a>
                             </a>
                         {{/each}}
                     </div>
                 </div>
             </ul>
         </div>
+
+        <div class="col s12">
+            <div class="missions-summary">
+                <ul class="collection with-header">
+                    <li class="collection-header red accent-4"><h4 class="center-align">Missions</h4></li>
+                    {{#each mission}}
+                        <a href="#!" class="collection-item">{{mission_title}} <span
+                                class="right"><b>{{mission_point_value}}pts</b></span></a>
+                    {{/each}}
+                    <li class="collection-header"><a
+                            class="disabled btn-add-mission btn-floating fab waves-effect waves-light red"
+                            href="/parent-add-missions/{{pid}}"><i
+                            class="material-icons">add</i></a></li>
+                </ul>
+            </div>
+        </div>
     </div>
+
+
 {{/if}}
 
 {{#if parentEditChildPage}}

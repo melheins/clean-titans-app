@@ -12,8 +12,9 @@
     <!-- Link to my Stylesheet -->
     <link rel="stylesheet" href="/assets/css/style.css" type="text/css"/>
     <title>Clean Titans - Command Center</title>
-    <!--Import jQuery before materialize.js-->
+    <!--Import firebase-->
     <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+    <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script src="/assets/js/parent.js"></script>
@@ -21,24 +22,31 @@
 <body>
 <nav class="green accent-4">
     <div class="nav-wrapper">
-        <a href="/parent/2" class="alter brand-logo"><img class="header-logo" src="/assets/images/logo/logo_big.png"></a>
+        <a href="/parent" class="alter brand-logo"><img class="header-logo" src="/assets/images/logo/logo_big.png"></a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="left-hdr-menu hide-on-med-and-down">
-            <li class="nav-icon"><a href="/parent-team" class="parent_team alter"><img class="nav-icon-img" src="/assets/images/icons/fam01.png"><div class="nav-icon-text">Team</div></a></li>
-            <li class="nav-icon"><a href="/parent-rewards" class="parent_rewards alter"><img class="nav-icon-img" src="/assets/images/icons/reward01.png"><div class="nav-icon-text">Rewards</div></a></li>
-            <li class="nav-icon"><a href="/parent-missions" class="parent_missions alter"><img class="nav-icon-img" src="/assets/images/icons/clean01.png"><div class="nav-icon-text">Mission</div></a></li>
+            <li class="nav-icon"><a href="/parent-team" class="parent_team alter"><img class="nav-icon-img"
+                                                                                       src="/assets/images/icons/fam01.png">
+                <div class="nav-icon-text">Team</div>
+            </a></li>
+            <li class="nav-icon"><a href="/parent-rewards" class="parent_rewards alter"><img class="nav-icon-img"
+                                                                                             src="/assets/images/icons/reward01.png">
+                <div class="nav-icon-text">Rewards</div>
+            </a></li>
+            <li class="nav-icon"><a href="/parent-missions" class="parent_missions alter"><img class="nav-icon-img"
+                                                                                               src="/assets/images/icons/clean01.png">
+                <div class="nav-icon-text">Mission</div>
+            </a></li>
         </ul>
         <ul class="right">
             <!--<li><a href="#">NAME</a></li>-->
             <li><a href="/child-login">Child Login</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
-
-            <li><a href="/parent/2" class="alter">Home</a></li>
-            <li><a href="/parent-team/2" class="alter">Team</a></li>
-            <li><a href="/parent-rewards/2" class="alter">Rewards</a></li>
-            <li><a href="/parent-missions/2" class="alter">Mission</a></li>
-
+            <li><a href="/parent" class="alter">Home</a></li>
+            <li><a href="/parent-team" class="alter">Team</a></li>
+            <li><a href="/parent-rewards" class="alter">Rewards</a></li>
+            <li><a href="/parent-missions" class="alter">Mission</a></li>
         </ul>
     </div>
 </nav>

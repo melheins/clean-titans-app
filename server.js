@@ -24,7 +24,6 @@ app.use(bodyParser.json({type: "application/vnd.api+json"}));
 // Static directory
 app.use(express.static("public"));
 
-
 // Handlebars
 // =============================================================
 var exphbs = require("express-handlebars");
@@ -37,7 +36,6 @@ app.set("view engine", "handlebars");
 // var routes = require("./controllers/test_controller.js");
 // app.use("/", routes);
 
-
 var route1 = require("./controllers/login_controller.js");
 var route2 = require("./controllers/parent_controller.js");
 var route3 = require("./controllers/child_controller.js");
@@ -49,6 +47,7 @@ app.use("/", route2);
 app.use("/", route3);
 app.use("/", route4);
 app.use("/", route5);
+
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync({force: false}).then(function () {
