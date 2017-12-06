@@ -130,46 +130,13 @@
                     <div class="col s12">
                         <h4>Select an Avatar</h4>
                         <div class="row">
-                            <div class="col s6 m4">
-                                <input name="avatars" type="radio" id="a1" value="1"/>
-                                <label for="a1">Batgirl</label>
-                                <img class="avatar-sm" src="/assets/images/childavatars/1.jpg">
-                            </div>
-                            <div class="col s6 m4">
-                                <input name="avatars" type="radio" id="a2" value="2"/>
-                                <label for="a2">Batboy</label>
-                                <img class="avatar-sm" src="/assets/images/childavatars/2.jpg">
-                            </div>
-                            <div class="col s6 m4">
-                                <input name="avatars" type="radio" id="a3" value="3"/>
-                                <label for="a3">Captain America</label>
-                                <img class="avatar-sm" src="/assets/images/childavatars/3.jpg">
-                            </div>
-                            <div class="col s6 m4">
-                                <input name="avatars" type="radio" id="a4" value="4"/>
-                                <label for="a4">Spider Girl</label>
-                                <img class="avatar-sm" src="/assets/images/childavatars/4.jpg">
-                            </div>
-                            <div class="col s6 m4">
-                                <input name="avatars" type="radio" id="a5" value="5"/>
-                                <label for="a5">Spider Boy</label>
-                                <img class="avatar-sm" src="/assets/images/childavatars/5.jpg">
-                            </div>
-                            <div class="col s6 m4">
-                                <input name="avatars" type="radio" id="a6" value="6"/>
-                                <label for="a6">Supergirl</label>
-                                <img class="avatar-sm" src="/assets/images/childavatars/6.jpg">
-                            </div>
-                            <div class="col s6 m4">
-                                <input name="avatars" type="radio" id="a7" value="7"/>
-                                <label for="a7">Superboy</label>
-                                <img class="avatar-sm" src="/assets/images/childavatars/7.jpg">
-                            </div>
-                            <div class="col s6 m4">
-                                <input name="avatars" type="radio" id="a8" value="8"/>
-                                <label for="a8">Wonder Girl</label>
-                                <img class="avatar-sm" src="/assets/images/childavatars/8.jpg">
-                            </div>
+                            {{#each avatars}}
+                                <div class="col s6 m4">
+                                    <input name="avatars" type="radio" id="a{{id}}" value="{{id}}"/>
+                                    <label for="a{{id}}">{{name}}</label>
+                                    <img class="avatar-sm" src="/assets/images/childavatars/{{id}}.jpg">
+                                </div>
+                            {{/each}}
                         </div>
                     </div>
 

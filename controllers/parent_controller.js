@@ -128,61 +128,33 @@ router.get("/parent-team/:id", function (req, res) {
 
 router.get("/parent-add-child/:id", function (req, res) {
     var id = req.params.id;
-    var rewards;
-    var missions;
 
-    db.rewards.findAll({
-        limit: 5
-    }).then(function (data) {
-        //console.log(data);
-        rewards = data;
+    var avatars = [
+        {
+            "id": "1", "name": "Batgirl"
+        }, {
+            "id": "2", "name": "Batboy"
+        }, {
+            "id": "3", "name": "Captain America"
+        }, {
+            "id": "4", "name": "Spider-girl"
+        }, {
+            "id": "5", "name": "Spider-boy"
+        }, {
+            "id": "6", "name": "Super-girl"
+        }, {
+            "id": "7", "name": "Super-boy"
+        }, {
+            "id": "8", "name": "Wonder-girl"
+        }];
+
+    res.render('parent', {
+        layout: 'parent_layout',
+        parentAddChildPage: true,
+        pid: id,
+        avatars:avatars
     });
 
-    db.missions.findAll({
-        limit: 5
-    }).then(function (data) {
-        //console.log(data);
-        missions = data;
-    });
-
-    db.parents.findOne({
-        where: {
-            id
-        },
-        include: [db.children, db.active_rewards, db.active_missions]
-    }).then(function (parentData) {
-
-        var children = parentData.children;
-        var rewardsAppr = [];
-        var missionsAppr = [];
-
-        //console.log(children);
-
-        //if no missions, set to false
-        if (missionsAppr.length === 0) missionsAppr = false;
-        else {
-            //check for missions that need approval
-            for (var i = 0; i < missions.length; i++) {
-                if (missions[i].mission_status === "W") missionsAppr.push(missions[i])
-            }
-        }
-        if (rewardsAppr.length === 0) rewardsAppr = false;
-        else {
-            for (var j = 0; j < missions.length; j++) {
-                if (rewards[j].reward_status === "W") rewardsAppr.push(rewards[j])
-            }
-        }
-        res.render('parent', {
-            layout: 'parent_layout',
-            parentAddChildPage: true,
-            child: children,
-            reward_approval: rewardsAppr,
-            mission_approval: missionsAppr,
-            mission: missions,
-            reward: rewards,
-            pid: id
-        });
-    });
 });
 
 router.get("/parent-rewards/:id", function (req, res) {
@@ -254,7 +226,6 @@ router.get("/parent-missions/:id", function (req, res) {
                 if (missions[i].mission_status === "W") missionsAppr.push(missions[i])
             }
         }
-
 
         res.render('parent', {
             layout: 'parent_layout',
