@@ -130,7 +130,7 @@ function addParent(parentData) {
          console.log(url)
          $.get(url)
          .then(function (child) {
-           window.location = "/children/" + child.id;
+           window.location = "/child";
          })
        });
   }

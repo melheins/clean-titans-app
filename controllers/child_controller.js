@@ -3,25 +3,25 @@ var db = require("../models");
 var router = express.Router();
 
 // Import the model (.js) to use its database functions.
-
 // Create all our routes and set up logic within those routes where required.
 
-router.get("/child/:id", function (req, res) {
+router.get("/child", function (req, res) {
+//router.get("/child/:id", function (req, res) {
     console.log(req.params.id)
     var missions_assigned = [
         {
-            "mission_title": "sample1"
+            "mission_title": "Sweep The Floor"
         },
         {
-            "mission_title": "sample2"
+            "mission_title": "unload the dishwasher"
         }];
 
     var rewards_earned = [
         {
-            "reward_id": "sample1"
+            "reward_id": "Ice Cream"
         },
         {
-            "reward_id": "sample2"
+            "reward_id": "Comic Book"
         }];
 
     var hero = {
@@ -31,9 +31,9 @@ router.get("/child/:id", function (req, res) {
     res.render('child', {
         layout: 'child_layout',
         childSummaryPage: true,
-        missions_assigned: [], //
-        rewards_earned: [], //rewards_earned,
-        child: {nickname: "syler"}
+        missions_assigned: missions_assigned, //
+        rewards_earned: rewards_earned, //rewards_earned,
+        child: hero
     });
 });
 
@@ -75,7 +75,12 @@ router.get("/child-rewards", function (req, res) {
 
         "reward_id": "ice cream",
         "reward_points_required": 3
-    }];
+    },
+        {
+            "reward_id": "comic book",
+            "reward_points_required": 10
+        }
+    ];
 
         console.log(rewards_available);
 

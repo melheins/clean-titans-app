@@ -20,7 +20,7 @@
                     {{#each child}}
                         <a href="#!" class="collection-item">
                             <img class='avatar-sm circle' src="{{avatar}}">
-                            <div><p>{{name}}</p>
+                            <div><p>{{first_name}}</p>
                                 <p>({{nickname}})</p>
                             </div>
                         </a>
@@ -37,7 +37,7 @@
                 <ul class="collection with-header">
                     <li class="collection-header red accent-4"><h4 class="center-align">Rewards</h4></li>
                     {{#each reward}}
-                        <a href="#!" class="collection-item">{{title}} {{points}}pts</a>
+                        <a href="#!" class="collection-item">{{reward_name}} <br><b>{{reward_points_required}}pts</b></a>
                     {{/each}}
                     <li class="collection-header"><a class="" href="/parent-rewards/{{pid}}">View All</a>
                         <a class="disabled btn-add-reward btn-floating fab waves-effect waves-light red"
@@ -52,7 +52,7 @@
                 <ul class="collection with-header">
                     <li class="collection-header red accent-4"><h4 class="center-align">Mission</h4></li>
                     {{#each mission}}
-                        <a href="#!" class="collection-item">{{title}} {{points}}pts</a>
+                        <a href="#!" class="collection-item">{{mission_title}} <br><b>{{mission_point_value}}pts</b></a>
                     {{/each}}
                     <li class="collection-header"><a class="" href="/parent-missions">View All</a>
                         <a class="disabled btn-add-mission btn-floating fab waves-effect waves-light red"
@@ -72,10 +72,10 @@
                 <div class="team-summary">
                     <div class="card">
                         <div class="card-header">
-                        <div class="card-title">
-                            {{name}}<br>
+                            <div class="card-title">
+                                {{name}}<br>
                                 ({{nickname}})
-                        </div>
+                            </div>
                         </div>
                         <div class="card-content">
                             <img class='avatar-sm' src="{{avatar}}">
