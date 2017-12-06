@@ -13,52 +13,52 @@
 {{#if parentSummaryPage}}
     <div id="team-summary-page" class="row">
         <h1 class="">Command Center</h1>
-        <div class="col s12 m4">
+        <div class="col s12 m6 l4">
             <div class="team-summary">
                 <ul class="collection with-header">
                     <li class="collection-header red accent-4"><h4 class="center-align">Team</h4></li>
                     {{#each child}}
-                        <a href="#!" class="collection-item">
-                            <img class='avatar-sm circle' src="/assets/images/childavatars/{{avatar}}.jpg">
+                        <li class="collection-item green-text text-accent-4 avatar">
+                            <img class='circle' src="/assets/images/childavatars/{{avatar}}.jpg">
                             <div><p>{{first_name}}</p>
                                 <p>({{nickname}})</p>
                             </div>
-                        </a>
+                        </li>
                     {{/each}}
-                    <li class="collection-header"><a class="" href="/parent-team/{{pid}}">View Team Details</a>
-                        <a class="btn-add-mission btn-floating fab waves-effect waves-light red"
+                    <li class="collection-footer"><a class="" href="/parent-team/{{pid}}">View Team Details</a>
+                        <a class="btn-add-mission btn-floating fab-right waves-effect waves-light red"
                            href="/parent-add-child/{{pid}}"><i
                                 class="material-icons">add</i></a></li>
                 </ul>
             </div>
         </div>
-        <div class="col s12 m4">
+        <div class="col s12 m6 l4">
             <div class="rewards-summary">
                 <ul class="collection with-header">
                     <li class="collection-header red accent-4"><h4 class="center-align">Rewards</h4></li>
                     {{#each reward}}
-                        <a href="#!" class="collection-item">{{reward_name}} <span
-                                class="right"><b>{{reward_points_required}}
+                        <a href="#!" class="collection-item green-text text-accent-4">{{reward_name}} <span
+                                class="badge deep-purple-text text-darken-1"><b>{{reward_points_required}}
                             pts</b></span></a>
                     {{/each}}
-                    <li class="collection-header"><a class="" href="/parent-rewards/{{pid}}">View All</a>
-                        <a class="disabled btn-add-reward btn-floating fab waves-effect waves-light red"
+                    <li class="collection-footer"><a class="" href="/parent-rewards/{{pid}}">View All</a>
+                        <a class="disabled btn-add-reward btn-floating fab-right waves-effect waves-light red"
                            href="/parent-add-rewards/{{pid}}"><i
                                 class="material-icons">add</i></a></li>
                 </ul>
             </div>
         </div>
 
-        <div class="col s12 m4">
+        <div class="col s12 m6 l4">
             <div class="missions-summary">
                 <ul class="collection with-header">
                     <li class="collection-header red accent-4"><h4 class="center-align">Mission</h4></li>
                     {{#each mission}}
-                        <a href="#!" class="collection-item">{{mission_title}} <span
-                                class="right"><b>{{mission_point_value}}pts</b></span></a>
+                        <a href="#!" class="collection-item green-text text-accent-4">{{mission_title}} <span
+                                class="badge deep-purple-text text-darken-1"><b>{{mission_point_value}}pts</b></span></a>
                     {{/each}}
-                    <li class="collection-header"><a class="" href="/parent-missions">View All</a>
-                        <a class="disabled btn-add-mission btn-floating fab waves-effect waves-light red"
+                    <li class="collection-footer"><a class="" href="/parent-missions">View All</a>
+                        <a class="disabled btn-add-mission btn-floating fab-right waves-effect waves-light red"
                            href="/parent-add-missions/{{pid}}"><i
                                 class="material-icons">add</i></a></li>
                 </ul>
@@ -194,12 +194,12 @@
                 <ul class="collection with-header">
                     <li class="collection-header red accent-4"><h4 class="center-align">Rewards</h4></li>
                     {{#each reward}}
-                        <a href="#!" class="collection-item">{{reward_name}} <span
-                                class="right"><b>{{reward_points_required}}
+                        <a href="#!" class="collection-item green-text text-accent-4">{{reward_name}} <span
+                                class="badge deep-purple-text text-darken-1"><b>{{reward_points_required}}
                             pts</b></span></a>
                     {{/each}}
-                    <li class="collection-header"><a
-                            class="disabled btn-add-reward btn-floating fab waves-effect waves-light red"
+                    <li class="collection-footer"><a
+                            class="disabled btn-add-reward btn-floating fab-right waves-effect waves-light red"
                             href="/parent-add-rewards/{{pid}}"><i
                             class="material-icons">add</i></a></li>
                 </ul>

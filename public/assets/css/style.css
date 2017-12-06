@@ -118,3 +118,19 @@ a,
 .child-summary .fixed-action-btn.toolbar ul {
     top: auto;
 ;}
+
+.team-summary .circle {
+    width: 50px !important;
+    height: auto !important;
+}
+
+.collection-footer {
+    padding: 25px;
+    background-color: #ffffff;
+}
+
+.fab-right{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
